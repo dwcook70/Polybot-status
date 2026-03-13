@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Polymarket Bot Status</title>
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f172a; color: #e2e8f0; min-height: 100vh; padding: 0; }
+    .header { background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); border-bottom: 1px solid #334155; padding: 24px 32px; text-align: center; }
+    .header h1 { font-size: 24px; font-weight: 700; color: #f8fafc; margin-bottom: 4px; }
+    .header h1 span { color: #818cf8; }
+    .header .subtitle { font-size: 13px; color: #64748b; }
+    .container { max-width: 900px; margin: 0 auto; padding: 24px; }
+    .cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-bottom: 24px; }
+    @media (min-width: 640px) { .cards { grid-template-columns: repeat(4, 1fr); } }
+    .card { background: #1e293b; border-radius: 12px; padding: 20px; border: 1px solid #334155; text-align: center; }
+    .card-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: #64748b; margin-bottom: 6px; }
+    .card-value { font-size: 26px; font-weight: 700; }
+    .card-sub { font-size: 11px; color: #475569; margin-top: 4px; }
+    .section { background: #1e293b; border-radius: 12px; border: 1px solid #334155; margin-bottom: 24px; overflow: hidden; }
+    .section-head { padding: 14px 20px; border-bottom: 1px solid #334155; font-size: 15px; font-weight: 600; }
+    table { width: 100%; border-collapse: collapse; }
+    th { text-align: left; padding: 8px 16px; font-size: 10px; text-transform: uppercase; letter-spacing: 0.06em; color: #475569; border-bottom: 1px solid #334155; }
+    td { padding: 10px 16px; font-size: 13px; border-bottom: 1px solid #0f172a; }
+    .exposure-bar { height: 8px; background: #334155; border-radius: 4px; overflow: hidden; margin-top: 8px; }
+    .exposure-fill { height: 100%; border-radius: 4px; }
+    .footer { text-align: center; padding: 20px; font-size: 11px; color: #334155; }
+    .live-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #10b981; margin-right: 6px; }
+</style>
+</head>
+<body>
+<div class="header">
+    <h1><span>Polymarket</span> Trading Bot</h1>
+    <div class="subtitle"><span class="live-dot"></span>Report generated March 12, 2026 at 02:01 AM CDT &middot; Last trade cycle 0 seconds ago</div>
+</div>
+<div class="container">
+    <div class="cards">
+        <div class="card">
+            <div class="card-label">Portfolio Value</div>
+            <div class="card-value">$252.42</div>
+            <div class="card-sub">Started $252.42</div>
+        </div>
+        <div class="card">
+            <div class="card-label">Profit / Loss</div>
+            <div class="card-value" style="color:#10b981">+$0.00</div>
+            <div class="card-sub">+0.0% return</div>
+        </div>
+        <div class="card">
+            <div class="card-label">Cash Available</div>
+            <div class="card-value">$136.90</div>
+            <div class="card-sub">60 trades made</div>
+        </div>
+        <div class="card">
+            <div class="card-label">Exposure</div>
+            <div class="card-value">$115.52</div>
+            <div class="exposure-bar"><div class="exposure-fill" style="width:57%;background:#f59e0b"></div></div>
+            <div class="card-sub">46% of 80% max</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-head">Open Positions (50)</div>
+        <table>
+            <thead><tr><th>Side</th><th>Market</th><th>Entry</th><th>Now</th><th>Size</th><th>P&L</th></tr></thead>
+            <tbody>
+            <tr>
+                <td><span style="background:#7f1d1d;color:#fca5a5;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:700;">NO</span></td>
+                <td style="max-width:300px;">Will the next Prime Minister of Hungary be Péter Magyar?</td>
+                <td style="text-align:center;">0.39</td>
+                <td style="text-align:center;">0.39</td>
+                <td style="text-align:right;">$2.64</td>
+                <td style="text-align:right;color:#10b981;font-weight:600;">+$0.00</td>
+            </tr>
+            <tr>
+                <td><span style="background:#065f46;color:#6ee7b7;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:700;">YES</span></td>
+                <td style="max-width:300px;">Will the next Prime Minister of Hungary be Viktor Orbán?</td>
+                <td style="text-align:center;">0.38</td>
+                <td style="text-align:center;">0.36</td>
+                <td style="text-align:right;">$2.62</td>
+                <td style="text-align:right;color:#ef4444;font-weight:600;">$-0.07</td>
+            </tr>
+            <tr>
+                <td><span style="background:#7f1d1d;color:#fca5a5;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:700;">NO</span></td>
+                <td style="max-width:300px;">Will the Philadelphia 76ers make the NBA Playoffs?</td>
+                <td style="text-align:center;">0.48</td>
+                <td style="text-align:center;">0.47</td>
+                <td style="text-align:right;">$2.80</td>
+                <td style="text-align:right;color:#ef4444;font-weight:600;">$-0.06</td>
+            </tr>
+            <tr>
+                <td><span style="background:#7f1d1d;color:#fca5a5;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:700;">NO</span></td>
+                <td style="max-width:300px;">Will the Anaheim Ducks win the Pacific Division?</td>
+                <td style="text-align:center;">0.46</td>
+                <td style="text-align:center;">0.47</td>
+                <td style="text-align:right;">$2.68</td>
+                <td style="text-align:right;color:#10b981;font-weight:600;">+$0.06</td>
+            </tr>
+            <tr>
+                <td><span style="background:#065f46;color:#6ee7b7;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:700;">YES</span></td>
+                <td style="max-width:300px;">Will the Indiana Pacers have the worst record in the NBA?</td>
+                <td style="text-align:center;">0.44</td>
+                <td style="text-align:center;">0.47</td>
+                <td style="text-align:right;">$2.65</td>
+                <td style="text-align:right;color:#10b981;font-weight:600;">+$0.15</td>
+            </tr>
+            <tr>
+                <td><span style="background:#065f46;color:#6ee7b7;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:700;">YES</span></td>
+                <td style="max-width:300px;">Will Jesus Christ return before GTA VI?</td>
+                <td style="text-align:center;">0.48</td>
+                <td style="text-align:center;">0.48</td>
+                <td style="text-align:right;">$2.61</td>
+                <td style="text-align:right;color:#10b981;font-weight:600;">+$0.00</td>
+            </tr>
+            <tr>
+                <td><span style="background:#065f46;color:#6ee7b7;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:700;">YES</span></td>
+                <td style="max-width:300px;">Will the Oklahoma City Thunder win the NBA Western Conference Finals?</td>
+                <td style="text-align:center;">0.48</td>
+                <td style="text-align:center;">0.47</td>
+                <td style="text-align:right;">$2.58</td>
+                <td style="text-align:right;color:#ef4444;font-weight:600;">$-0.05</td>
+            </tr>
+            <tr>
+                <td><span style="background:#065f46;color:#6ee7b7;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:700;">YES</span></td>
+                <td style="max-width:300px;">Starmer out by June 30, 2026?</td>
+                <td style="text-align:center;">0.42</td>
+                <td style="text-align:center;">0.43</td>
+                <td style="text-align:right;">$2.55</td>
+                <td style="text-align:right;color:#10b981;font-weight:600;">+$0.03</td>
+            </tr>
+            <tr>
+                <td><span style="background:#065f46;color:#6ee7b7;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:700;">YES</span></td>
+                <td style="max-width:300px;">Will Ivan Cepeda Castro win the 2026 Colombian presidential election?</td>
+                <td style="text-align:center;">0.46</td>
+                <td style="text-align:center;">0.45</td>
+                <td style="text-align:right;">$2.53</td>
+                <td style="text-align:right;color:#ef4444;font-weight:600;">$-0.06</td>
+            </tr>
+            <tr>
+                <td><span style="background:#065f46;color:#6ee7b7;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:700;">YES</span></td>
+                <td style="max-width:300px;">Will the Oklahoma City Thunder win the 2026 NBA Finals?</td>
+                <td style="text-align:center;">0.35</td>
+                <td style="text-align:center;">0.34</td>
+                <td style="text-align:right;">$2.50</td>
+                <td style="text-align:right;color:#ef4444;font-weight:600;">$-0.07</td>
+            </tr>
+            <tr>
+                <td><span style="background:#065f46;color:#6ee7b7;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:700;">YES</span></td>
+                <td style="max-width:300px;">Will the Buffalo Sabres win the Atlantic Division?</td>
+                <td style="text-align:center;">0.41</td>
+                <td style="text-align:center;">0.42</td>
+                <td style="text-align:right;">$2.49</td>
+                <td style="text-align:right;color:#10b981;font-weight:600;">+$0.04</td>
+            </tr>
+            <tr>
+                <td><span style="background:#065f46;color:#6ee7b7;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:700;">YES</span></td>
+                <td style="max-width:300px;">Will bitcoin hit $1m before GTA VI?</td>
+                <td style="text-align:center;">0.49</td>
+                <td style="text-align:center;">0.49</td>
+                <td style="text-align:right;">$2.49</td>
+                <td style="text-align:right;color:#10b981;font-weight:600;">+$0.00</td>
+            </tr>
+            <tr>
+                <td><span style="background:#7f1d1d;color:#fca5a5;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:700;">NO</span></td>
+                <td style="max-width:300px;">Will Trump and Putin not meet?</td>
+                <td style="text-align:center;">0.43</td>
+                <td style="text-align:center;">0.46</td>
+                <td style="text-align:right;">$2.47</td>
+                <td style="text-align:right;color:#10b981;font-weight:600;">+$0.18</td>
+            </tr>
+            <tr>
+                <td><span style="background:#7f1d1d;color:#fca5a5;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:700;">NO</span></td>
+                <td style="max-width:300px;">Will GPT-6 be released before GTA VI?</td>
+                <td style="text-align:center;">0.35</td>
+                <td style="text-align:center;">0.34</td>
+                <td style="text-align:right;">$2.44</td>
+                <td style="text-align:right;color:#ef4444;font-weight:600;">$-0.07</td>
+            </tr>
+            <tr>
+                <td><span style="background:#065f46;color:#6ee7b7;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:700;">YES</span></td>
+                <td style="max-width:300px;">Will Bayern Munich win the 2025–26 Champions League?</td>
+                <td style="text-align:center;">0.21</td>
+                <td style="text-align:center;">0.23</td>
+                <td style="text-align:right;">$2.43</td>
+                <td style="text-align:right;color:#10b981;font-weight:600;">+$0.11</td>
+            </tr>
+            <tr>
+                <td><span style="background:#065f46;color:#6ee7b7;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:700;">YES</span></td>
+                <td style="max-width:300px;">Will Anthropic have the best AI model at the end of June 2026?</td>
+                <td style="text-align:center;">0.41</td>
+                <td style="text-align:center;">0.46</td>
+                <td style="text-align:right;">$2.41</td>
+                <td style="text-align:right;color:#10b981;font-weight:600;">+$0.28</td>
+            </tr>
+            <tr>
+                <td><span style="background:#065f46;color:#6ee7b7;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:700;">YES</span></td>
+                <td style="max-width:300px;">Will Anthropic have the top AI model at the end of June 2026?</td>
+                <td style="text-align:center;">0.34</td>
+                <td style="text-align:center;">0.30</td>
+                <td style="text-align:right;">$2.41</td>
+                <td style="text-align:right;color:#ef4444;font-weight:600;">$-0.25</td>
+            </tr>
+            <tr>
+                <td><span style="background:#065f46;color:#6ee7b7;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:700;">YES</span></td>
+                <td style="max-width:300px;">Will Stephen Curry lead the NBA in three pointers made during the 2025–26 NBA season?</td>
+                <td style="text-align:center;">0.13</td>
+                <td style="text-align:center;">0.20</td>
+                <td style="text-align:right;">$2.40</td>
+                <td style="text-align:right;color:#10b981;font-weight:600;">+$1.38</td>
+            </tr>
+            <tr>
+                <td><span style="background:#7f1d1d;color:#fca5a5;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:700;">NO</span></td>
+                <td style="max-width:300px;">Will the Los Angeles Clippers make the NBA Playoffs?</td>
+                <td style="text-align:center;">0.41</td>
+                <td style="text-align:center;">0.40</td>
+                <td style="text-align:right;">$2.52</td>
+                <td style="text-align:right;color:#ef4444;font-weight:600;">$-0.06</td>
+            </tr>
+            <tr>
+                <td><span style="background:#065f46;color:#6ee7b7;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:700;">YES</span></td>
+                <td style="max-width:300px;">Will the Washington Wizards win more than 20.5 regular season games in 2025–26?</td>
+                <td style="text-align:center;">0.47</td>
+                <td style="text-align:center;">0.48</td>
+                <td style="text-align:right;">$2.90</td>
+                <td style="text-align:right;color:#10b981;font-weight:600;">+$0.05</td>
+            </tr>
+            <tr>
+                <td><span style="background:#7f1d1d;color:#fca5a5;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:700;">NO</span></td>
+                <td style="max-width:300px;">New Playboi Carti Album before GTA VI?</td>
+                <td style="text-align:center;">0.47</td>
+                <td style="text-align:center;">0.45</td>
+                <td style="text-align:right;">$2.67</td>
+                <td style="text-align:right;color:#ef4444;font-weight:600;">$-0.09</td>
+            </tr>
+            <tr>
+                <td><span style="background:#7f1d1d;color:#fca5a5;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:700;">NO</span></td>
+                <td style="max-width:300px;">Will China invades Taiwan before GTA VI?</td>
+                <td style="text-align:center;">0.48</td>
+                <td style="text-align:center;">0.48</td>
+                <td style="text-align:right;">$2.64</td>
+                <td style="text-align:right;color:#10b981;font-weight:600;">+$0.00</td>
+            </tr>
+            <tr>
+                <td><span style="background:#7f1d1d;color:#fca5a5;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:700;">NO</span></td>
+                <td style="max-width:300px;">Trump out as President before GTA VI?</td>
+                <td style="text-align:center;">0.48</td>
+                <td style="text-align:center;">0.48</td>
+                <td style="text-align:right;">$2.60</td>
+                <td style="text-align:right;color:#ef4444;font-weight:600;">$-0.03</td>
+            </tr>
+            <tr>
+                <td><span style="background:#7f1d1d;color:#fca5a5;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:700;">NO</span></td>
+                <td style="max-width:300px;">Russia-Ukraine Ceasefire before GTA VI?</td>
+                <td style="text-align:center;">0.42</td>
+                <td style="text-align:center;">0.43</td>
+                <td style="text-align:right;">$2.57</td>
+                <td style="text-align:right;color:#10b981;font-weight:600;">+$0.06</td>
+            </tr>
+            <tr>
+                <td><span style="background:#065f46;color:#6ee7b7;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:700;">YES</span></td>
+                <td style="max-width:300px;">Will Michael B. Jordan win Best Actor at the 98th Academy Awards?</td>
+                <td style="text-align:center;">0.47</td>
+                <td style="text-align:center;">0.46</td>
+                <td style="text-align:right;">$2.57</td>
+                <td style="text-align:right;color:#ef4444;font-weight:600;">$-0.08</td>
+            </tr>
+            <tr>
+                <td><span style="background:#7f1d1d;color:#fca5a5;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:700;">NO</span></td>
+                <td style="max-width:300px;">No one announced as next James Bond?</td>
+                <td style="text-align:center;">0.49</td>
+                <td style="text-align:center;">0.49</td>
+                <td style="text-align:right;">$2.52</td>
+                <td style="text-align:right;color:#10b981;font-weight:600;">+$0.00</td>
+            </tr>
+            <tr>
+                <td><span style="background:#7f1d1d;color:#fca5a5;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:700;">NO</span></td>
+                <td style="max-width:300px;">New Rihanna Album before GTA VI?</td>
+                <td style="text-align:center;">0.41</td>
+                <td style="text-align:center;">0.41</td>
+                <td style="text-align:right;">$2.52</td>
+                <td style="text-align:right;color:#ef4444;font-weight:600;">$-0.03</td>
+            </tr>
+            <tr>
+                <td><span style="background:#7f1d1d;color:#fca5a5;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:700;">NO</span></td>
+                <td style="max-width:300px;">Will Kon Knueppel win the 2025–26 NBA Rookie of the Year award?</td>
+                <td style="text-align:center;">0.35</td>
+                <td style="text-align:center;">0.34</td>
+                <td style="text-align:right;">$2.51</td>
+                <td style="text-align:right;color:#ef4444;font-weight:600;">$-0.03</td>
+            </tr>
+            <tr>
+                <td><span style="background:#065f46;color:#6ee7b7;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:700;">YES</span></td>
+                <td style="max-width:300px;">Will Karen Bass win the 2026 Los Angeles mayoral election?</td>
+                <td style="text-align:center;">0.42</td>
+                <td style="text-align:center;">0.42</td>
+                <td style="text-align:right;">$2.48</td>
+                <td style="text-align:right;color:#10b981;font-weight:600;">+$0.00</td>
+            </tr>
+            <tr>
+                <td><span style="background:#065f46;color:#6ee7b7;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:700;">YES</span></td>
+                <td style="max-width:300px;">Will Arsenal win the 2025–26 Champions League?</td>
+                <td style="text-align:center;">0.26</td>
+                <td style="text-align:center;">0.27</td>
+                <td style="text-align:right;">$1.97</td>
+                <td style="text-align:right;color:#10b981;font-weight:600;">+$0.08</td>
+            </tr>
+            <tr>
+                <td><span style="background:#065f46;color:#6ee7b7;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:700;">YES</span></td>
+                <td style="max-width:300px;">Will Timothée Chalamet win Best Actor at the 98th Academy Awards?</td>
+                <td style="text-align:center;">0.40</td>
+                <td style="text-align:center;">0.41</td>
+                <td style="text-align:right;">$1.95</td>
+                <td style="text-align:right;color:#10b981;font-weight:600;">+$0.10</td>
+            </tr>
+            <tr>
+                <td><span style="background:#065f46;color:#6ee7b7;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:700;">YES</span></td>
+                <td style="max-width:300px;">Will Tottenham be relegated from the English Premier League after the 2025–26 season?</td>
+                <td style="text-align:center;">0.34</td>
+                <td style="text-align:center;">0.34</td>
+                <td style="text-align:right;">$1.91</td>
+                <td style="text-align:right;color:#10b981;font-weight:600;">+$0.00</td>
+            </tr>
+            <tr>
+                <td><span style="background:#065f46;color:#6ee7b7;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:700;">YES</span></td>
+                <td style="max-width:300px;">Will Paloma Valencia win the 2026 Colombian presidential election?</td>
+                <td style="text-align:center;">0.33</td>
+                <td style="text-align:center;">0.34</td>
+                <td style="text-align:right;">$1.90</td>
+                <td style="text-align:right;color:#10b981;font-weight:600;">+$0.05</td>
+            </tr>
+            <tr>
+                <td><span style="background:#065f46;color:#6ee7b7;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:700;">YES</span></td>
+                <td style="max-width:300px;">Will the Colorado Avalanche win the 2026 NHL Stanley Cup?</td>
+                <td style="text-align:center;">0.22</td>
+                <td style="text-align:center;">0.23</td>
+                <td style="text-align:right;">$1.84</td>
+                <td style="text-align:right;color:#10b981;font-weight:600;">+$0.03</td>
+            </tr>
+            <tr>
+                <td><span style="background:#065f46;color:#6ee7b7;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:700;">YES</span></td>
+                <td style="max-width:300px;">BitBoy convicted?</td>
+                <td style="text-align:center;">0.24</td>
+                <td style="text-align:center;">0.27</td>
+                <td style="text-align:right;">$1.84</td>
+                <td style="text-align:right;color:#10b981;font-weight:600;">+$0.23</td>
+            </tr>
+            <tr>
+                <td><span style="background:#065f46;color:#6ee7b7;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:700;">YES</span></td>
+                <td style="max-width:300px;">Will Cooper Flagg win the 2025–26 NBA Rookie of the Year award?</td>
+                <td style="text-align:center;">0.34</td>
+                <td style="text-align:center;">0.34</td>
+                <td style="text-align:right;">$1.83</td>
+                <td style="text-align:right;color:#10b981;font-weight:600;">+$0.00</td>
+            </tr>
+            <tr>
+                <td><span style="background:#7f1d1d;color:#fca5a5;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:700;">NO</span></td>
+                <td style="max-width:300px;">Will Arsenal win the 2025–26 English Premier League?</td>
+                <td style="text-align:center;">0.20</td>
+                <td style="text-align:center;">0.20</td>
+                <td style="text-align:right;">$1.82</td>
+                <td style="text-align:right;color:#10b981;font-weight:600;">+$0.00</td>
+            </tr>
+            <tr>
+                <td><span style="background:#065f46;color:#6ee7b7;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:700;">YES</span></td>
+                <td style="max-width:300px;">Will the Golden State Warriors make the NBA Playoffs?</td>
+                <td style="text-align:center;">0.41</td>
+                <td style="text-align:center;">0.40</td>
+                <td style="text-align:right;">$2.09</td>
+                <td style="text-align:right;color:#ef4444;font-weight:600;">$-0.05</td>
+            </tr>
+            <tr>
+                <td><span style="background:#065f46;color:#6ee7b7;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:700;">YES</span></td>
+                <td style="max-width:300px;">Will Manchester City win the 2025–26 English Premier League?</td>
+                <td style="text-align:center;">0.17</td>
+                <td style="text-align:center;">0.18</td>
+                <td style="text-align:right;">$1.79</td>
+                <td style="text-align:right;color:#10b981;font-weight:600;">+$0.10</td>
+            </tr>
+            <tr>
+                <td><span style="background:#065f46;color:#6ee7b7;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:700;">YES</span></td>
+                <td style="max-width:300px;">Will Google have the best AI model at the end of June 2026?</td>
+                <td style="text-align:center;">0.32</td>
+                <td style="text-align:center;">0.32</td>
+                <td style="text-align:right;">$1.78</td>
+                <td style="text-align:right;color:#10b981;font-weight:600;">+$0.00</td>
+            </tr>
+            <tr>
+                <td><span style="background:#065f46;color:#6ee7b7;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:700;">YES</span></td>
+                <td style="max-width:300px;">Will PSG win the 2025–26 Champions League?</td>
+                <td style="text-align:center;">0.12</td>
+                <td style="text-align:center;">0.12</td>
+                <td style="text-align:right;">$1.76</td>
+                <td style="text-align:right;color:#10b981;font-weight:600;">+$0.00</td>
+            </tr>
+            <tr>
+                <td><span style="background:#7f1d1d;color:#fca5a5;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:700;">NO</span></td>
+                <td style="max-width:300px;">Will Nikola Jokic lead the NBA in rebounds during the 2025–26 NBA season?</td>
+                <td style="text-align:center;">0.17</td>
+                <td style="text-align:center;">0.14</td>
+                <td style="text-align:right;">$1.75</td>
+                <td style="text-align:right;color:#ef4444;font-weight:600;">$-0.40</td>
+            </tr>
+            <tr>
+                <td><span style="background:#065f46;color:#6ee7b7;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:700;">YES</span></td>
+                <td style="max-width:300px;">Will Barcelona win the 2025–26 Champions League?</td>
+                <td style="text-align:center;">0.14</td>
+                <td style="text-align:center;">0.14</td>
+                <td style="text-align:right;">$1.75</td>
+                <td style="text-align:right;color:#10b981;font-weight:600;">+$0.00</td>
+            </tr>
+            <tr>
+                <td><span style="background:#065f46;color:#6ee7b7;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:700;">YES</span></td>
+                <td style="max-width:300px;">Callum Turner announced as next James Bond?</td>
+                <td style="text-align:center;">0.30</td>
+                <td style="text-align:center;">0.28</td>
+                <td style="text-align:right;">$1.74</td>
+                <td style="text-align:right;color:#ef4444;font-weight:600;">$-0.12</td>
+            </tr>
+            <tr>
+                <td><span style="background:#7f1d1d;color:#fca5a5;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:700;">NO</span></td>
+                <td style="max-width:300px;">Will Kylian Mbappe be the 2025/2026 top UCL goal scorer?</td>
+                <td style="text-align:center;">0.32</td>
+                <td style="text-align:center;">0.32</td>
+                <td style="text-align:right;">$1.74</td>
+                <td style="text-align:right;color:#10b981;font-weight:600;">+$0.00</td>
+            </tr>
+            <tr>
+                <td><span style="background:#7f1d1d;color:#fca5a5;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:700;">NO</span></td>
+                <td style="max-width:300px;">Will Manchester City finish in 2nd place in the 2025-26 English Premier League?</td>
+                <td style="text-align:center;">0.32</td>
+                <td style="text-align:center;">0.32</td>
+                <td style="text-align:right;">$1.74</td>
+                <td style="text-align:right;color:#10b981;font-weight:600;">+$0.03</td>
+            </tr>
+            <tr>
+                <td><span style="background:#065f46;color:#6ee7b7;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:700;">YES</span></td>
+                <td style="max-width:300px;">Will OpenAI have the top AI model at the end of June 2026?</td>
+                <td style="text-align:center;">0.25</td>
+                <td style="text-align:center;">0.25</td>
+                <td style="text-align:right;">$1.73</td>
+                <td style="text-align:right;color:#10b981;font-weight:600;">+$0.00</td>
+            </tr>
+            <tr>
+                <td><span style="background:#7f1d1d;color:#fca5a5;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:700;">NO</span></td>
+                <td style="max-width:300px;">Will Israel launch a major ground offensive in Lebanon by March 31?</td>
+                <td style="text-align:center;">0.35</td>
+                <td style="text-align:center;">0.32</td>
+                <td style="text-align:right;">$2.93</td>
+                <td style="text-align:right;color:#ef4444;font-weight:600;">$-0.33</td>
+            </tr>
+            <tr>
+                <td><span style="background:#7f1d1d;color:#fca5a5;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:700;">NO</span></td>
+                <td style="max-width:300px;">Will Choo Mi-ae win the 2026 Gyeonggi Province Gubernatorial Election?</td>
+                <td style="text-align:center;">0.37</td>
+                <td style="text-align:center;">0.36</td>
+                <td style="text-align:right;">$2.76</td>
+                <td style="text-align:right;color:#ef4444;font-weight:600;">$-0.08</td>
+            </tr>
+            <tr>
+                <td><span style="background:#7f1d1d;color:#fca5a5;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:700;">NO</span></td>
+                <td style="max-width:300px;">Will Amy Madigan win Best Supporting Actress at the 98th Academy Awards?</td>
+                <td style="text-align:center;">0.49</td>
+                <td style="text-align:center;">0.49</td>
+                <td style="text-align:right;">$2.70</td>
+                <td style="text-align:right;color:#10b981;font-weight:600;">+$0.01</td>
+            </tr></tbody>
+        </table>
+    </div>
+
+    <div class="section">
+        <div class="section-head">Recent Trades</div>
+        <table>
+            <thead><tr><th>Time</th><th>Side</th><th>Market</th><th>Price</th><th>Size</th><th>Status</th></tr></thead>
+            <tbody>
+            <tr>
+                <td>03/12 12:02 AM</td>
+                <td><span style="background:#7f1d1d;color:#fca5a5;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:700;">NO</span></td>
+                <td title="high uncertainty (0.51/0.49); good volume ($13,818 24h)">Will Amy Madigan win Best Supporting Actress at the ...</td>
+                <td style="text-align:center;">$0.49</td>
+                <td style="text-align:right;">$2.70</td>
+                <td style="text-align:center;color:#f59e0b;font-weight:600;">live</td>
+            </tr>
+            <tr>
+                <td>03/12 12:01 AM</td>
+                <td><span style="background:#065f46;color:#6ee7b7;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:700;">YES</span></td>
+                <td title="">Will the San Antonio Spurs win the NBA Western Confe...</td>
+                <td style="text-align:center;">$0.00</td>
+                <td style="text-align:right;">$0.00</td>
+                <td style="text-align:center;color:#f59e0b;font-weight:600;">?</td>
+            </tr>
+            <tr>
+                <td>03/11 11:47 PM</td>
+                <td><span style="background:#7f1d1d;color:#fca5a5;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:700;">NO</span></td>
+                <td title="high uncertainty (0.63/0.37); good volume ($2,929 24h); resolves in 83 days">Will Choo Mi-ae win the 2026 Gyeonggi Province Guber...</td>
+                <td style="text-align:center;">$0.37</td>
+                <td style="text-align:right;">$2.76</td>
+                <td style="text-align:center;color:#f59e0b;font-weight:600;">live</td>
+            </tr>
+            <tr>
+                <td>03/11 11:47 PM</td>
+                <td><span style="background:#7f1d1d;color:#fca5a5;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:700;">NO</span></td>
+                <td title="high uncertainty (0.65/0.35); good volume ($197,878 24h); resolves in 19 days">Will Israel launch a major ground offensive in Leban...</td>
+                <td style="text-align:center;">$0.35</td>
+                <td style="text-align:right;">$2.93</td>
+                <td style="text-align:center;color:#10b981;font-weight:600;">matched</td>
+            </tr>
+            <tr>
+                <td>03/11 11:46 PM</td>
+                <td><span style="background:#065f46;color:#6ee7b7;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:700;">YES</span></td>
+                <td title="">Will Real Madrid win the 2025–26 La Liga?</td>
+                <td style="text-align:center;">$0.00</td>
+                <td style="text-align:right;">$0.00</td>
+                <td style="text-align:center;color:#f59e0b;font-weight:600;">?</td>
+            </tr>
+            <tr>
+                <td>03/11 11:46 PM</td>
+                <td><span style="background:#7f1d1d;color:#fca5a5;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:700;">NO</span></td>
+                <td title="">Will Barcelona win the 2025–26 La Liga?</td>
+                <td style="text-align:center;">$0.00</td>
+                <td style="text-align:right;">$0.00</td>
+                <td style="text-align:center;color:#f59e0b;font-weight:600;">?</td>
+            </tr>
+            <tr>
+                <td>03/11 11:31 PM</td>
+                <td><span style="background:#065f46;color:#6ee7b7;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:700;">YES</span></td>
+                <td title="good volume ($2,489 24h); resolves in 110 days">Will OpenAI have the top AI model at the end of June...</td>
+                <td style="text-align:center;">$0.25</td>
+                <td style="text-align:right;">$1.73</td>
+                <td style="text-align:center;color:#f59e0b;font-weight:600;">live</td>
+            </tr>
+            <tr>
+                <td>03/11 11:31 PM</td>
+                <td><span style="background:#7f1d1d;color:#fca5a5;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:700;">NO</span></td>
+                <td title="high uncertainty (0.69/0.32); good volume ($619 24h); resolves in 76 days">Will Manchester City finish in 2nd place in the 2025...</td>
+                <td style="text-align:center;">$0.32</td>
+                <td style="text-align:right;">$1.74</td>
+                <td style="text-align:center;color:#10b981;font-weight:600;">matched</td>
+            </tr>
+            <tr>
+                <td>03/11 11:31 PM</td>
+                <td><span style="background:#7f1d1d;color:#fca5a5;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:700;">NO</span></td>
+                <td title="high uncertainty (0.69/0.32); good volume ($1,728 24h); resolves in 79 days">Will Kylian Mbappe be the 2025/2026 top UCL goal sco...</td>
+                <td style="text-align:center;">$0.32</td>
+                <td style="text-align:right;">$1.74</td>
+                <td style="text-align:center;color:#f59e0b;font-weight:600;">live</td>
+            </tr>
+            <tr>
+                <td>03/11 11:31 PM</td>
+                <td><span style="background:#065f46;color:#6ee7b7;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:700;">YES</span></td>
+                <td title="good volume ($2,600 24h); resolves in 110 days">Callum Turner announced as next James Bond?</td>
+                <td style="text-align:center;">$0.30</td>
+                <td style="text-align:right;">$1.74</td>
+                <td style="text-align:center;color:#f59e0b;font-weight:600;">live</td>
+            </tr>
+            <tr>
+                <td>03/11 11:31 PM</td>
+                <td><span style="background:#065f46;color:#6ee7b7;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:700;">YES</span></td>
+                <td title="good volume ($50,220 24h); resolves in 80 days">Will Barcelona win the 2025–26 Champions League?</td>
+                <td style="text-align:center;">$0.14</td>
+                <td style="text-align:right;">$1.75</td>
+                <td style="text-align:center;color:#10b981;font-weight:600;">matched</td>
+            </tr>
+            <tr>
+                <td>03/11 11:31 PM</td>
+                <td><span style="background:#7f1d1d;color:#fca5a5;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:700;">NO</span></td>
+                <td title="spread opportunity (0.090); good volume ($981 24h); resolves in 31 days">Will Nikola Jokic lead the NBA in rebounds during th...</td>
+                <td style="text-align:center;">$0.17</td>
+                <td style="text-align:right;">$1.75</td>
+                <td style="text-align:center;color:#f59e0b;font-weight:600;">live</td>
+            </tr>
+            <tr>
+                <td>03/11 11:31 PM</td>
+                <td><span style="background:#065f46;color:#6ee7b7;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:700;">YES</span></td>
+                <td title="good volume ($486,745 24h); resolves in 80 days">Will PSG win the 2025–26 Champions League?</td>
+                <td style="text-align:center;">$0.12</td>
+                <td style="text-align:right;">$1.76</td>
+                <td style="text-align:center;color:#f59e0b;font-weight:600;">live</td>
+            </tr>
+            <tr>
+                <td>03/11 11:31 PM</td>
+                <td><span style="background:#065f46;color:#6ee7b7;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:700;">YES</span></td>
+                <td title="high uncertainty (0.32/0.69); good volume ($2,003 24h); resolves in 110 days">Will Google have the best AI model at the end of Jun...</td>
+                <td style="text-align:center;">$0.32</td>
+                <td style="text-align:right;">$1.78</td>
+                <td style="text-align:center;color:#10b981;font-weight:600;">matched</td>
+            </tr>
+            <tr>
+                <td>03/11 11:31 PM</td>
+                <td><span style="background:#065f46;color:#6ee7b7;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:700;">YES</span></td>
+                <td title="good volume ($20,070 24h); resolves in 76 days">Will Manchester City win the 2025–26 English Premier...</td>
+                <td style="text-align:center;">$0.17</td>
+                <td style="text-align:right;">$1.79</td>
+                <td style="text-align:center;color:#10b981;font-weight:600;">matched</td>
+            </tr></tbody>
+        </table>
+    </div>
+</div>
+<div class="footer">Polymarket Trading Bot &middot; View only &middot; Auto-updated every 15 minutes</div>
+</body>
+</html>
