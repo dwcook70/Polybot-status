@@ -16,7 +16,7 @@
     .btn-secondary { background: #334155; color: #e2e8f0; }
     .btn-secondary:hover { background: #475569; }
     .container { max-width: 1200px; margin: 0 auto; padding: 24px; }
-    .stats-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin-bottom: 24px; }
+    .stats-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; margin-bottom: 24px; }
     .stat-card { background: #1e293b; border-radius: 12px; padding: 20px; border: 1px solid #334155; }
     .stat-label { font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; color: #94a3b8; margin-bottom: 6px; }
     .stat-value { font-size: 28px; font-weight: 700; }
@@ -48,6 +48,9 @@
     .filter-bar input[type="date"]:focus { outline: none; border-color: #6366f1; }
     .filter-bar .btn-sm { padding: 6px 14px; font-size: 12px; }
     .txn-count { font-size: 12px; color: #64748b; margin-left: auto; }
+    @media (max-width: 1100px) {
+        .stats-grid { grid-template-columns: repeat(3, 1fr); }
+    }
     @media (max-width: 900px) {
         .stats-grid { grid-template-columns: repeat(2, 1fr); }
         .settings-grid { grid-template-columns: repeat(2, 1fr); }
@@ -61,7 +64,7 @@
 <div class="header">
     <h1><span>Polymarket</span> Trading Bot - Status</h1>
     <div class="header-right">
-        <span class="last-run">Last run: 0s ago (3:01 PM CDT, 03/13/2026)</span>
+        <span class="last-run">Last run: 1s ago (3:23 PM CDT, 03/13/2026)</span>
         <button class="btn btn-secondary" onclick="refreshPage()">Refresh</button>
     </div>
 </div>
@@ -80,9 +83,14 @@
             <div class="stat-sub">4% of $235.42</div>
         </div>
         <div class="stat-card">
-            <div class="stat-label">P&amp;L</div>
+            <div class="stat-label">Realized P&amp;L</div>
             <div class="stat-value" style="color:#ef4444">$-3.58</div>
             <div class="stat-sub">-1.6% return</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-label">Open Positions P&amp;L</div>
+            <div class="stat-value" style="color:#ef4444">$-8.96</div>
+            <div class="stat-sub">-6.6% on $134.86 deployed</div>
         </div>
         <div class="stat-card">
             <div class="stat-label">Cash Available (On-Chain)</div>
@@ -101,43 +109,34 @@
     <div class="section">
         <div class="section-header"><h2>Open Positions (51)</h2></div>
         <table>
-            <thead><tr><th>Side</th><th>Market</th><th>Entry</th><th>Current</th><th>Size</th><th>P&amp;L</th><th>P&amp;L %</th></tr></thead>
+            <thead><tr><th>Side</th><th>Market</th><th>Entry</th><th>Bid</th><th>Size</th><th>P&amp;L</th><th>P&amp;L %</th></tr></thead>
             <tbody>
             <tr>
                 <td><span class="side-yes">YES</span></td>
                 <td title="Will Anthropic have the best AI model at the end of June 2026?">Will Anthropic have the best AI model at the end of June ...</td>
                 <td>0.413</td>
-                <td>0.511</td>
+                <td>0.510</td>
                 <td>$2.41</td>
                 <td style="color:#10b981">+$0.56</td>
-                <td style="color:#10b981;font-size:12px;">+23.6%</td>
+                <td style="color:#10b981;font-size:12px;">+23.3%</td>
             </tr>
             <tr>
                 <td><span class="side-yes">YES</span></td>
                 <td title="Will Michael B. Jordan win Best Actor at the 98th Academy Awards?">Will Michael B. Jordan win Best Actor at the 98th Academy...</td>
                 <td>0.472</td>
-                <td>0.564</td>
+                <td>0.560</td>
                 <td>$2.57</td>
-                <td style="color:#10b981">+$0.50</td>
-                <td style="color:#10b981;font-size:12px;">+19.5%</td>
-            </tr>
-            <tr>
-                <td><span class="side-no">NO</span></td>
-                <td title="Will the Anaheim Ducks win the Pacific Division?">Will the Anaheim Ducks win the Pacific Division?</td>
-                <td>0.464</td>
-                <td>0.540</td>
-                <td>$2.68</td>
-                <td style="color:#10b981">+$0.10</td>
-                <td style="color:#10b981;font-size:12px;">+16.4%</td>
+                <td style="color:#10b981">+$0.48</td>
+                <td style="color:#10b981;font-size:12px;">+18.6%</td>
             </tr>
             <tr>
                 <td><span class="side-no">NO</span></td>
                 <td title="Will the Philadelphia 76ers make the NBA Playoffs?">Will the Philadelphia 76ers make the NBA Playoffs?</td>
                 <td>0.480</td>
-                <td>0.550</td>
+                <td>0.540</td>
                 <td>$2.80</td>
                 <td style="color:#10b981">+$0.35</td>
-                <td style="color:#10b981;font-size:12px;">+14.6%</td>
+                <td style="color:#10b981;font-size:12px;">+12.5%</td>
             </tr>
             <tr>
                 <td><span class="side-yes">YES</span></td>
@@ -146,97 +145,70 @@
                 <td>0.370</td>
                 <td>$1.90</td>
                 <td style="color:#10b981">+$0.23</td>
-                <td style="color:#10b981;font-size:12px;">+12.3%</td>
+                <td style="color:#10b981;font-size:12px;">+12.1%</td>
             </tr>
             <tr>
                 <td><span class="side-no">NO</span></td>
                 <td title="Will Amy Madigan win Best Supporting Actress at the 98th Academy Awards?">Will Amy Madigan win Best Supporting Actress at the 98th ...</td>
                 <td>0.486</td>
-                <td>0.532</td>
+                <td>0.530</td>
                 <td>$2.70</td>
-                <td style="color:#10b981">+$0.25</td>
-                <td style="color:#10b981;font-size:12px;">+9.6%</td>
-            </tr>
-            <tr>
-                <td><span class="side-yes">YES</span></td>
-                <td title="Will Karen Bass win the 2026 Los Angeles mayoral election?">Will Karen Bass win the 2026 Los Angeles mayoral election?</td>
-                <td>0.420</td>
-                <td>0.455</td>
-                <td>$2.48</td>
-                <td style="color:#10b981">+$0.12</td>
-                <td style="color:#10b981;font-size:12px;">+8.3%</td>
+                <td style="color:#10b981">+$0.24</td>
+                <td style="color:#10b981;font-size:12px;">+9.1%</td>
             </tr>
             <tr>
                 <td><span class="side-yes">YES</span></td>
                 <td title="Callum Turner announced as next James Bond?">Callum Turner announced as next James Bond?</td>
                 <td>0.300</td>
-                <td>0.325</td>
+                <td>0.320</td>
                 <td>$1.74</td>
                 <td style="color:#10b981">+$0.12</td>
-                <td style="color:#10b981;font-size:12px;">+8.3%</td>
+                <td style="color:#10b981;font-size:12px;">+6.7%</td>
             </tr>
             <tr>
                 <td><span class="side-yes">YES</span></td>
                 <td title="Starmer out by June 30, 2026?">Starmer out by June 30, 2026?</td>
                 <td>0.425</td>
-                <td>0.455</td>
+                <td>0.450</td>
                 <td>$2.55</td>
                 <td style="color:#10b981">+$0.15</td>
-                <td style="color:#10b981;font-size:12px;">+7.1%</td>
+                <td style="color:#10b981;font-size:12px;">+5.9%</td>
             </tr>
             <tr>
                 <td><span class="side-yes">YES</span></td>
                 <td title="Will Tottenham be relegated from the English Premier League after the 2025–26 season?">Will Tottenham be relegated from the English Premier Leag...</td>
                 <td>0.344</td>
-                <td>0.365</td>
+                <td>0.361</td>
                 <td>$1.91</td>
                 <td style="color:#10b981">+$0.10</td>
-                <td style="color:#10b981;font-size:12px;">+6.3%</td>
+                <td style="color:#10b981;font-size:12px;">+5.1%</td>
             </tr>
             <tr>
                 <td><span class="side-yes">YES</span></td>
-                <td title="Will Anthropic have the top AI model at the end of June 2026?">Will Anthropic have the top AI model at the end of June 2...</td>
-                <td>0.335</td>
-                <td>0.355</td>
-                <td>$2.41</td>
-                <td style="color:#10b981">+$0.04</td>
-                <td style="color:#10b981;font-size:12px;">+6.0%</td>
+                <td title="Will Karen Bass win the 2026 Los Angeles mayoral election?">Will Karen Bass win the 2026 Los Angeles mayoral election?</td>
+                <td>0.420</td>
+                <td>0.440</td>
+                <td>$2.48</td>
+                <td style="color:#10b981">+$0.12</td>
+                <td style="color:#10b981;font-size:12px;">+4.8%</td>
+            </tr>
+            <tr>
+                <td><span class="side-no">NO</span></td>
+                <td title="Will the Anaheim Ducks win the Pacific Division?">Will the Anaheim Ducks win the Pacific Division?</td>
+                <td>0.464</td>
+                <td>0.480</td>
+                <td>$2.68</td>
+                <td style="color:#10b981">+$0.09</td>
+                <td style="color:#10b981;font-size:12px;">+3.4%</td>
             </tr>
             <tr>
                 <td><span class="side-yes">YES</span></td>
                 <td title="Will Manchester City win the 2025–26 English Premier League?">Will Manchester City win the 2025–26 English Premier League?</td>
                 <td>0.175</td>
-                <td>0.185</td>
+                <td>0.180</td>
                 <td>$1.79</td>
                 <td style="color:#10b981">+$0.05</td>
-                <td style="color:#10b981;font-size:12px;">+5.7%</td>
-            </tr>
-            <tr>
-                <td><span class="side-no">NO</span></td>
-                <td title="Will Manchester City finish in 2nd place in the 2025-26 English Premier League?">Will Manchester City finish in 2nd place in the 2025-26 E...</td>
-                <td>0.315</td>
-                <td>0.330</td>
-                <td>$1.74</td>
-                <td style="color:#ef4444">$-0.03</td>
-                <td style="color:#ef4444;font-size:12px;">+4.8%</td>
-            </tr>
-            <tr>
-                <td><span class="side-no">NO</span></td>
-                <td title="Will GPT-6 be released before GTA VI?">Will GPT-6 be released before GTA VI?</td>
-                <td>0.355</td>
-                <td>0.370</td>
-                <td>$2.44</td>
-                <td style="color:#10b981">+$0.03</td>
-                <td style="color:#10b981;font-size:12px;">+4.2%</td>
-            </tr>
-            <tr>
-                <td><span class="side-no">NO</span></td>
-                <td title="No one announced as next James Bond?">No one announced as next James Bond?</td>
-                <td>0.490</td>
-                <td>0.505</td>
-                <td>$2.52</td>
-                <td style="color:#10b981">+$0.05</td>
-                <td style="color:#10b981;font-size:12px;">+3.1%</td>
+                <td style="color:#10b981;font-size:12px;">+2.9%</td>
             </tr>
             <tr>
                 <td><span class="side-yes">YES</span></td>
@@ -244,80 +216,44 @@
                 <td>0.215</td>
                 <td>0.220</td>
                 <td>$2.43</td>
-                <td style="color:#ef4444">$-0.06</td>
-                <td style="color:#ef4444;font-size:12px;">+2.3%</td>
+                <td style="color:#10b981">+$0.06</td>
+                <td style="color:#10b981;font-size:12px;">+2.3%</td>
             </tr>
             <tr>
-                <td><span class="side-yes">YES</span></td>
-                <td title="Will the Orlando Magic win the 2025–2026 NBA Southeast Division?">Will the Orlando Magic win the 2025–2026 NBA Southeast Di...</td>
-                <td>0.410</td>
-                <td>0.415</td>
-                <td>$5.15</td>
-                <td style="color:#ef4444">$-0.13</td>
-                <td style="color:#ef4444;font-size:12px;">+1.2%</td>
-            </tr>
-            <tr>
-                <td><span class="side-yes">YES</span></td>
-                <td title="Will the Democrats win the Ohio Senate race in 2026?">Will the Democrats win the Ohio Senate race in 2026?</td>
+                <td><span class="side-no">NO</span></td>
+                <td title="No one announced as next James Bond?">No one announced as next James Bond?</td>
                 <td>0.490</td>
-                <td>0.495</td>
-                <td>$4.99</td>
-                <td style="color:#ef4444">$-0.10</td>
-                <td style="color:#ef4444;font-size:12px;">+1.0%</td>
+                <td>0.500</td>
+                <td>$2.52</td>
+                <td style="color:#10b981">+$0.05</td>
+                <td style="color:#10b981;font-size:12px;">+2.0%</td>
+            </tr>
+            <tr>
+                <td><span class="side-yes">YES</span></td>
+                <td title="Will Anthropic have the top AI model at the end of June 2026?">Will Anthropic have the top AI model at the end of June 2...</td>
+                <td>0.335</td>
+                <td>0.340</td>
+                <td>$2.41</td>
+                <td style="color:#10b981">+$0.04</td>
+                <td style="color:#10b981;font-size:12px;">+1.5%</td>
+            </tr>
+            <tr>
+                <td><span class="side-no">NO</span></td>
+                <td title="Will GPT-6 be released before GTA VI?">Will GPT-6 be released before GTA VI?</td>
+                <td>0.355</td>
+                <td>0.360</td>
+                <td>$2.44</td>
+                <td style="color:#10b981">+$0.03</td>
+                <td style="color:#10b981;font-size:12px;">+1.4%</td>
             </tr>
             <tr>
                 <td><span class="side-yes">YES</span></td>
                 <td title="Will the Colorado Avalanche win the 2026 NHL Stanley Cup?">Will the Colorado Avalanche win the 2026 NHL Stanley Cup?</td>
                 <td>0.223</td>
-                <td>0.223</td>
+                <td>0.222</td>
                 <td>$1.84</td>
                 <td style="color:#ef4444">$-0.00</td>
-                <td style="color:#ef4444;font-size:12px;">+0.2%</td>
-            </tr>
-            <tr>
-                <td><span class="side-yes">YES</span></td>
-                <td title="Will Jesus Christ return before GTA VI?">Will Jesus Christ return before GTA VI?</td>
-                <td>0.485</td>
-                <td>0.485</td>
-                <td>$2.61</td>
-                <td style="color:#ef4444">$-0.03</td>
-                <td style="color:#ef4444;font-size:12px;">+0.0%</td>
-            </tr>
-            <tr>
-                <td><span class="side-no">NO</span></td>
-                <td title="Will China invades Taiwan before GTA VI?">Will China invades Taiwan before GTA VI?</td>
-                <td>0.485</td>
-                <td>0.485</td>
-                <td>$2.64</td>
-                <td style="color:#ef4444">$-0.03</td>
-                <td style="color:#ef4444;font-size:12px;">+0.0%</td>
-            </tr>
-            <tr>
-                <td><span class="side-yes">YES</span></td>
-                <td title="Will Arsenal win the 2025–26 Champions League?">Will Arsenal win the 2025–26 Champions League?</td>
-                <td>0.255</td>
-                <td>0.255</td>
-                <td>$1.97</td>
-                <td style="color:#ef4444">$-0.04</td>
-                <td style="color:#ef4444;font-size:12px;">+0.0%</td>
-            </tr>
-            <tr>
-                <td><span class="side-yes">YES</span></td>
-                <td title="Will Barcelona win the 2025–26 Champions League?">Will Barcelona win the 2025–26 Champions League?</td>
-                <td>0.135</td>
-                <td>0.135</td>
-                <td>$1.75</td>
-                <td style="color:#ef4444">$-0.06</td>
-                <td style="color:#ef4444;font-size:12px;">+0.0%</td>
-            </tr>
-            <tr>
-                <td><span class="side-no">NO</span></td>
-                <td title="Will John Cornyn win the 2026 Texas Republican Primary?">Will John Cornyn win the 2026 Texas Republican Primary?</td>
-                <td>0.395</td>
-                <td>0.395</td>
-                <td>$5.11</td>
-                <td style="color:#ef4444">$-0.06</td>
-                <td style="color:#ef4444;font-size:12px;">+0.0%</td>
+                <td style="color:#ef4444;font-size:12px;">-0.2%</td>
             </tr>
             <tr>
                 <td><span class="side-yes">YES</span></td>
@@ -326,247 +262,319 @@
                 <td>0.486</td>
                 <td>$2.49</td>
                 <td style="color:#ef4444">$-0.01</td>
-                <td style="color:#ef4444;font-size:12px;">-0.3%</td>
+                <td style="color:#ef4444;font-size:12px;">-0.4%</td>
             </tr>
             <tr>
                 <td><span class="side-yes">YES</span></td>
-                <td title="Will the Oklahoma City Thunder win the NBA Western Conference Finals?">Will the Oklahoma City Thunder win the NBA Western Confer...</td>
+                <td title="Will Jesus Christ return before GTA VI?">Will Jesus Christ return before GTA VI?</td>
                 <td>0.485</td>
-                <td>0.475</td>
-                <td>$2.58</td>
-                <td style="color:#ef4444">$-0.08</td>
-                <td style="color:#ef4444;font-size:12px;">-2.1%</td>
+                <td>0.480</td>
+                <td>$2.61</td>
+                <td style="color:#ef4444">$-0.03</td>
+                <td style="color:#ef4444;font-size:12px;">-1.0%</td>
             </tr>
             <tr>
                 <td><span class="side-no">NO</span></td>
-                <td title="Trump out as President before GTA VI?">Trump out as President before GTA VI?</td>
+                <td title="Will China invades Taiwan before GTA VI?">Will China invades Taiwan before GTA VI?</td>
                 <td>0.485</td>
-                <td>0.475</td>
-                <td>$2.60</td>
-                <td style="color:#ef4444">$-0.08</td>
-                <td style="color:#ef4444;font-size:12px;">-2.1%</td>
+                <td>0.480</td>
+                <td>$2.64</td>
+                <td style="color:#ef4444">$-0.03</td>
+                <td style="color:#ef4444;font-size:12px;">-1.0%</td>
             </tr>
             <tr>
                 <td><span class="side-yes">YES</span></td>
                 <td title="Will Poland qualify for the 2026 FIFA World Cup?">Will Poland qualify for the 2026 FIFA World Cup?</td>
                 <td>0.415</td>
-                <td>0.405</td>
+                <td>0.410</td>
                 <td>$5.24</td>
-                <td style="color:#ef4444">$-0.19</td>
+                <td style="color:#ef4444">$-0.06</td>
+                <td style="color:#ef4444;font-size:12px;">-1.2%</td>
+            </tr>
+            <tr>
+                <td><span class="side-no">NO</span></td>
+                <td title="Will John Cornyn win the 2026 Texas Republican Primary?">Will John Cornyn win the 2026 Texas Republican Primary?</td>
+                <td>0.395</td>
+                <td>0.390</td>
+                <td>$5.11</td>
+                <td style="color:#ef4444">$-0.06</td>
+                <td style="color:#ef4444;font-size:12px;">-1.3%</td>
+            </tr>
+            <tr>
+                <td><span class="side-no">NO</span></td>
+                <td title="Will Manchester City finish in 2nd place in the 2025-26 English Premier League?">Will Manchester City finish in 2nd place in the 2025-26 E...</td>
+                <td>0.315</td>
+                <td>0.310</td>
+                <td>$1.74</td>
+                <td style="color:#ef4444">$-0.03</td>
+                <td style="color:#ef4444;font-size:12px;">-1.6%</td>
+            </tr>
+            <tr>
+                <td><span class="side-yes">YES</span></td>
+                <td title="Will Arsenal win the 2025–26 Champions League?">Will Arsenal win the 2025–26 Champions League?</td>
+                <td>0.255</td>
+                <td>0.250</td>
+                <td>$1.97</td>
+                <td style="color:#ef4444">$-0.04</td>
+                <td style="color:#ef4444;font-size:12px;">-2.0%</td>
+            </tr>
+            <tr>
+                <td><span class="side-yes">YES</span></td>
+                <td title="Will the Democrats win the Ohio Senate race in 2026?">Will the Democrats win the Ohio Senate race in 2026?</td>
+                <td>0.490</td>
+                <td>0.480</td>
+                <td>$4.99</td>
+                <td style="color:#ef4444">$-0.10</td>
+                <td style="color:#ef4444;font-size:12px;">-2.0%</td>
+            </tr>
+            <tr>
+                <td><span class="side-yes">YES</span></td>
+                <td title="Will the Orlando Magic win the 2025–2026 NBA Southeast Division?">Will the Orlando Magic win the 2025–2026 NBA Southeast Di...</td>
+                <td>0.410</td>
+                <td>0.400</td>
+                <td>$5.15</td>
+                <td style="color:#ef4444">$-0.13</td>
                 <td style="color:#ef4444;font-size:12px;">-2.4%</td>
+            </tr>
+            <tr>
+                <td><span class="side-yes">YES</span></td>
+                <td title="Will the Oklahoma City Thunder win the NBA Western Conference Finals?">Will the Oklahoma City Thunder win the NBA Western Confer...</td>
+                <td>0.485</td>
+                <td>0.470</td>
+                <td>$2.58</td>
+                <td style="color:#ef4444">$-0.08</td>
+                <td style="color:#ef4444;font-size:12px;">-3.1%</td>
+            </tr>
+            <tr>
+                <td><span class="side-no">NO</span></td>
+                <td title="Trump out as President before GTA VI?">Trump out as President before GTA VI?</td>
+                <td>0.485</td>
+                <td>0.470</td>
+                <td>$2.60</td>
+                <td style="color:#ef4444">$-0.08</td>
+                <td style="color:#ef4444;font-size:12px;">-3.1%</td>
+            </tr>
+            <tr>
+                <td><span class="side-yes">YES</span></td>
+                <td title="Will Barcelona win the 2025–26 Champions League?">Will Barcelona win the 2025–26 Champions League?</td>
+                <td>0.135</td>
+                <td>0.130</td>
+                <td>$1.75</td>
+                <td style="color:#ef4444">$-0.06</td>
+                <td style="color:#ef4444;font-size:12px;">-3.7%</td>
             </tr>
             <tr>
                 <td><span class="side-no">NO</span></td>
                 <td title="Will the next Prime Minister of Hungary be Péter Magyar?">Will the next Prime Minister of Hungary be Péter Magyar?</td>
                 <td>0.385</td>
-                <td>0.375</td>
+                <td>0.370</td>
                 <td>$2.64</td>
                 <td style="color:#ef4444">$-0.10</td>
-                <td style="color:#ef4444;font-size:12px;">-2.6%</td>
+                <td style="color:#ef4444;font-size:12px;">-3.9%</td>
             </tr>
             <tr>
                 <td><span class="side-yes">YES</span></td>
                 <td title="Will the next Prime Minister of Hungary be Viktor Orbán?">Will the next Prime Minister of Hungary be Viktor Orbán?</td>
                 <td>0.375</td>
-                <td>0.365</td>
+                <td>0.360</td>
                 <td>$2.62</td>
                 <td style="color:#ef4444">$-0.10</td>
-                <td style="color:#ef4444;font-size:12px;">-2.7%</td>
+                <td style="color:#ef4444;font-size:12px;">-4.0%</td>
             </tr>
             <tr>
                 <td><span class="side-yes">YES</span></td>
                 <td title="Will the Oklahoma City Thunder win the 2026 NBA Finals?">Will the Oklahoma City Thunder win the 2026 NBA Finals?</td>
                 <td>0.355</td>
-                <td>0.345</td>
+                <td>0.340</td>
                 <td>$2.50</td>
                 <td style="color:#ef4444">$-0.11</td>
-                <td style="color:#ef4444;font-size:12px;">-2.8%</td>
-            </tr>
-            <tr>
-                <td><span class="side-no">NO</span></td>
-                <td title="Will Choo Mi-ae win the 2026 Gyeonggi Province Gubernatorial Election?">Will Choo Mi-ae win the 2026 Gyeonggi Province Gubernator...</td>
-                <td>0.373</td>
-                <td>0.357</td>
-                <td>$2.76</td>
-                <td style="color:#ef4444">$-0.16</td>
-                <td style="color:#ef4444;font-size:12px;">-4.4%</td>
+                <td style="color:#ef4444;font-size:12px;">-4.2%</td>
             </tr>
             <tr>
                 <td><span class="side-yes">YES</span></td>
                 <td title="Will Ken Paxton win the 2026 Texas Republican Primary?">Will Ken Paxton win the 2026 Texas Republican Primary?</td>
                 <td>0.395</td>
-                <td>0.375</td>
+                <td>0.370</td>
                 <td>$5.28</td>
                 <td style="color:#ef4444">$-0.33</td>
-                <td style="color:#ef4444;font-size:12px;">-5.1%</td>
+                <td style="color:#ef4444;font-size:12px;">-6.3%</td>
+            </tr>
+            <tr>
+                <td><span class="side-no">NO</span></td>
+                <td title="Will Choo Mi-ae win the 2026 Gyeonggi Province Gubernatorial Election?">Will Choo Mi-ae win the 2026 Gyeonggi Province Gubernator...</td>
+                <td>0.373</td>
+                <td>0.349</td>
+                <td>$2.76</td>
+                <td style="color:#ef4444">$-0.18</td>
+                <td style="color:#ef4444;font-size:12px;">-6.6%</td>
             </tr>
             <tr>
                 <td><span class="side-no">NO</span></td>
                 <td title="Will Arsenal win the 2025–26 English Premier League?">Will Arsenal win the 2025–26 English Premier League?</td>
                 <td>0.195</td>
-                <td>0.185</td>
+                <td>0.180</td>
                 <td>$1.82</td>
                 <td style="color:#ef4444">$-0.14</td>
-                <td style="color:#ef4444;font-size:12px;">-5.1%</td>
+                <td style="color:#ef4444;font-size:12px;">-7.7%</td>
             </tr>
             <tr>
                 <td><span class="side-yes">YES</span></td>
                 <td title="Will Google have the best AI model at the end of June 2026?">Will Google have the best AI model at the end of June 2026?</td>
                 <td>0.315</td>
-                <td>0.295</td>
+                <td>0.290</td>
                 <td>$1.78</td>
                 <td style="color:#ef4444">$-0.14</td>
-                <td style="color:#ef4444;font-size:12px;">-6.3%</td>
+                <td style="color:#ef4444;font-size:12px;">-7.9%</td>
             </tr>
             <tr>
                 <td><span class="side-no">NO</span></td>
                 <td title="Russia-Ukraine Ceasefire before GTA VI?">Russia-Ukraine Ceasefire before GTA VI?</td>
                 <td>0.425</td>
-                <td>0.395</td>
+                <td>0.390</td>
                 <td>$2.57</td>
                 <td style="color:#ef4444">$-0.21</td>
-                <td style="color:#ef4444;font-size:12px;">-7.1%</td>
+                <td style="color:#ef4444;font-size:12px;">-8.2%</td>
             </tr>
             <tr>
                 <td><span class="side-yes">YES</span></td>
                 <td title="Will PSG win the 2025–26 Champions League?">Will PSG win the 2025–26 Champions League?</td>
                 <td>0.125</td>
-                <td>0.115</td>
+                <td>0.110</td>
                 <td>$1.76</td>
                 <td style="color:#ef4444">$-0.21</td>
-                <td style="color:#ef4444;font-size:12px;">-8.0%</td>
+                <td style="color:#ef4444;font-size:12px;">-12.0%</td>
             </tr>
             <tr>
                 <td><span class="side-yes">YES</span></td>
                 <td title="Will Ivan Cepeda Castro win the 2026 Colombian presidential election?">Will Ivan Cepeda Castro win the 2026 Colombian presidenti...</td>
                 <td>0.455</td>
-                <td>0.405</td>
+                <td>0.400</td>
                 <td>$2.53</td>
                 <td style="color:#ef4444">$-0.31</td>
-                <td style="color:#ef4444;font-size:12px;">-11.0%</td>
-            </tr>
-            <tr>
-                <td><span class="side-no">NO</span></td>
-                <td title="Will the Los Angeles Clippers make the NBA Playoffs?">Will the Los Angeles Clippers make the NBA Playoffs?</td>
-                <td>0.410</td>
-                <td>0.360</td>
-                <td>$2.52</td>
-                <td style="color:#ef4444">$-0.37</td>
-                <td style="color:#ef4444;font-size:12px;">-12.2%</td>
+                <td style="color:#ef4444;font-size:12px;">-12.1%</td>
             </tr>
             <tr>
                 <td><span class="side-no">NO</span></td>
                 <td title="Will Kon Knueppel win the 2025–26 NBA Rookie of the Year award?">Will Kon Knueppel win the 2025–26 NBA Rookie of the Year ...</td>
                 <td>0.348</td>
-                <td>0.304</td>
+                <td>0.300</td>
                 <td>$2.51</td>
                 <td style="color:#ef4444">$-0.35</td>
-                <td style="color:#ef4444;font-size:12px;">-12.6%</td>
+                <td style="color:#ef4444;font-size:12px;">-13.8%</td>
             </tr>
             <tr>
                 <td><span class="side-no">NO</span></td>
                 <td title="Will Trump and Putin not meet?">Will Trump and Putin not meet?</td>
                 <td>0.427</td>
-                <td>0.370</td>
+                <td>0.367</td>
                 <td>$2.47</td>
-                <td style="color:#ef4444">$-0.38</td>
-                <td style="color:#ef4444;font-size:12px;">-13.3%</td>
+                <td style="color:#ef4444">$-0.35</td>
+                <td style="color:#ef4444;font-size:12px;">-14.2%</td>
             </tr>
             <tr>
                 <td><span class="side-no">NO</span></td>
-                <td title="Will USD.AI launch a token by March 31?">Will USD.AI launch a token by March 31?</td>
-                <td>0.370</td>
-                <td>0.320</td>
-                <td>$5.14</td>
-                <td style="color:#ef4444">$-1.25</td>
-                <td style="color:#ef4444;font-size:12px;">-13.5%</td>
-            </tr>
-            <tr>
-                <td><span class="side-yes">YES</span></td>
-                <td title="Will OpenAI have the top AI model at the end of June 2026?">Will OpenAI have the top AI model at the end of June 2026?</td>
-                <td>0.250</td>
-                <td>0.210</td>
-                <td>$1.73</td>
-                <td style="color:#ef4444">$-0.42</td>
-                <td style="color:#ef4444;font-size:12px;">-16.0%</td>
+                <td title="Will the Los Angeles Clippers make the NBA Playoffs?">Will the Los Angeles Clippers make the NBA Playoffs?</td>
+                <td>0.410</td>
+                <td>0.350</td>
+                <td>$2.52</td>
+                <td style="color:#ef4444">$-0.37</td>
+                <td style="color:#ef4444;font-size:12px;">-14.6%</td>
             </tr>
             <tr>
                 <td><span class="side-yes">YES</span></td>
                 <td title="Will the Golden State Warriors make the NBA Playoffs?">Will the Golden State Warriors make the NBA Playoffs?</td>
                 <td>0.405</td>
-                <td>0.340</td>
+                <td>0.330</td>
                 <td>$2.09</td>
                 <td style="color:#ef4444">$-0.39</td>
-                <td style="color:#ef4444;font-size:12px;">-16.0%</td>
+                <td style="color:#ef4444;font-size:12px;">-18.5%</td>
+            </tr>
+            <tr>
+                <td><span class="side-yes">YES</span></td>
+                <td title="Will OpenAI have the top AI model at the end of June 2026?">Will OpenAI have the top AI model at the end of June 2026?</td>
+                <td>0.250</td>
+                <td>0.190</td>
+                <td>$1.73</td>
+                <td style="color:#ef4444">$-0.42</td>
+                <td style="color:#ef4444;font-size:12px;">-24.0%</td>
+            </tr>
+            <tr>
+                <td><span class="side-no">NO</span></td>
+                <td title="Will USD.AI launch a token by March 31?">Will USD.AI launch a token by March 31?</td>
+                <td>0.370</td>
+                <td>0.280</td>
+                <td>$5.14</td>
+                <td style="color:#ef4444">$-1.25</td>
+                <td style="color:#ef4444;font-size:12px;">-24.3%</td>
             </tr>
             <tr>
                 <td><span class="side-no">NO</span></td>
                 <td title="Will Nikola Jokic lead the NBA in rebounds during the 2025–26 NBA season?">Will Nikola Jokic lead the NBA in rebounds during the 202...</td>
                 <td>0.175</td>
-                <td>0.145</td>
+                <td>0.130</td>
                 <td>$1.75</td>
                 <td style="color:#ef4444">$-0.45</td>
-                <td style="color:#ef4444;font-size:12px;">-17.1%</td>
+                <td style="color:#ef4444;font-size:12px;">-25.7%</td>
             </tr>
             <tr>
                 <td><span class="side-yes">YES</span></td>
                 <td title="Will Timothée Chalamet win Best Actor at the 98th Academy Awards?">Will Timothée Chalamet win Best Actor at the 98th Academy...</td>
                 <td>0.395</td>
-                <td>0.295</td>
+                <td>0.290</td>
                 <td>$1.95</td>
                 <td style="color:#ef4444">$-0.52</td>
-                <td style="color:#ef4444;font-size:12px;">-25.3%</td>
-            </tr>
-            <tr>
-                <td><span class="side-yes">YES</span></td>
-                <td title="Will the Washington Wizards win more than 20.5 regular season games in 2025–26?">Will the Washington Wizards win more than 20.5 regular se...</td>
-                <td>0.471</td>
-                <td>0.349</td>
-                <td>$2.90</td>
-                <td style="color:#ef4444">$-0.79</td>
-                <td style="color:#ef4444;font-size:12px;">-25.9%</td>
+                <td style="color:#ef4444;font-size:12px;">-26.6%</td>
             </tr>
             <tr>
                 <td><span class="side-yes">YES</span></td>
                 <td title="Will the Buffalo Sabres win the Atlantic Division?">Will the Buffalo Sabres win the Atlantic Division?</td>
                 <td>0.411</td>
-                <td>0.304</td>
+                <td>0.301</td>
                 <td>$2.49</td>
                 <td style="color:#ef4444">$-0.67</td>
-                <td style="color:#ef4444;font-size:12px;">-26.1%</td>
+                <td style="color:#ef4444;font-size:12px;">-26.9%</td>
+            </tr>
+            <tr>
+                <td><span class="side-yes">YES</span></td>
+                <td title="Will the Washington Wizards win more than 20.5 regular season games in 2025–26?">Will the Washington Wizards win more than 20.5 regular se...</td>
+                <td>0.471</td>
+                <td>0.343</td>
+                <td>$2.90</td>
+                <td style="color:#ef4444">$-0.79</td>
+                <td style="color:#ef4444;font-size:12px;">-27.3%</td>
             </tr>
             <tr>
                 <td><span class="side-no">NO</span></td>
                 <td title="New Rihanna Album before GTA VI?">New Rihanna Album before GTA VI?</td>
                 <td>0.410</td>
-                <td>0.285</td>
+                <td>0.280</td>
                 <td>$2.52</td>
                 <td style="color:#ef4444">$-0.80</td>
-                <td style="color:#ef4444;font-size:12px;">-30.5%</td>
-            </tr>
-            <tr>
-                <td><span class="side-yes">YES</span></td>
-                <td title="Will the Indiana Pacers have the worst record in the NBA?">Will the Indiana Pacers have the worst record in the NBA?</td>
-                <td>0.444</td>
-                <td>0.284</td>
-                <td>$2.65</td>
-                <td style="color:#ef4444">$-1.92</td>
-                <td style="color:#ef4444;font-size:12px;">-36.0%</td>
+                <td style="color:#ef4444;font-size:12px;">-31.7%</td>
             </tr>
             <tr>
                 <td><span class="side-yes">YES</span></td>
                 <td title="BitBoy convicted?">BitBoy convicted?</td>
                 <td>0.236</td>
-                <td>0.134</td>
+                <td>0.121</td>
                 <td>$1.84</td>
-                <td style="color:#ef4444">$-0.89</td>
-                <td style="color:#ef4444;font-size:12px;">-43.4%</td>
+                <td style="color:#ef4444">$-0.90</td>
+                <td style="color:#ef4444;font-size:12px;">-48.7%</td>
+            </tr>
+            <tr>
+                <td><span class="side-yes">YES</span></td>
+                <td title="Will the Indiana Pacers have the worst record in the NBA?">Will the Indiana Pacers have the worst record in the NBA?</td>
+                <td>0.444</td>
+                <td>0.137</td>
+                <td>$2.65</td>
+                <td style="color:#ef4444">$-1.83</td>
+                <td style="color:#ef4444;font-size:12px;">-69.1%</td>
             </tr>
             <tr style="border-top:2px solid #475569;font-weight:700;">
                 <td colspan="4" style="text-align:right;color:#94a3b8;">TOTAL</td>
                 <td>$134.86</td>
-                <td style="color:#ef4444">$-9.26</td>
-                <td style="color:#ef4444;font-size:12px;">-6.9%</td>
+                <td style="color:#ef4444">$-8.96</td>
+                <td style="color:#ef4444;font-size:12px;">-6.6%</td>
             </tr></tbody>
         </table>
     </div>
@@ -1635,7 +1643,7 @@
     <!-- Run History -->
     <div class="section">
         <div class="section-header">
-            <h2>Run History <span id="run-count" style="font-weight:400;font-size:13px;color:#94a3b8;">(189 runs)</span></h2>
+            <h2>Run History <span id="run-count" style="font-weight:400;font-size:13px;color:#94a3b8;">(190 runs)</span></h2>
             <select id="run-filter" onchange="filterRuns()" style="background:#334155;color:#e2e8f0;border:1px solid #475569;border-radius:6px;padding:4px 10px;font-size:12px;cursor:pointer;">
                 <option value="all">All Runs</option>
                 <option value="trades">Runs with Trades</option>
@@ -1648,6 +1656,17 @@
         <table>
             <thead><tr><th>Time</th><th>Status</th><th style="text-align:center;">Trades</th><th style="text-align:center;">Positions</th><th style="text-align:right;">Cash</th><th style="text-align:right;">Deployed</th><th style="text-align:right;">Run P&amp;L</th><th style="text-align:right;">Cumulative P&amp;L</th><th style="text-align:right;">Duration</th></tr></thead>
             <tbody id="run-body">
+            <tr data-trades="0" data-pnl="0" data-settings="0">
+                <td>03/13 03:19 PM</td>
+                <td><span style="color:#10b981;font-weight:600;font-size:12px;">ok</span></td>
+                <td style="text-align:center;">0</td>
+                <td style="text-align:center;">51</td>
+                <td style="text-align:right;">$100.56</td>
+                <td style="text-align:right;">$134.86</td>
+                <td style="text-align:right;color:#475569;font-weight:600;">+$0.00</td>
+                <td style="text-align:right;color:#ef4444">$-3.58</td>
+                <td style="text-align:right;color:#64748b;">260.3s</td>
+            </tr>
             <tr data-trades="0" data-pnl="0" data-settings="0">
                 <td>03/13 03:00 PM</td>
                 <td><span style="color:#10b981;font-weight:600;font-size:12px;">ok</span></td>
