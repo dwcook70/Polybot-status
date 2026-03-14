@@ -33,6 +33,11 @@
     .side-no { background: #7f1d1d; color: #fca5a5; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 700; }
     .status-matched { color: #10b981; }
     .status-live { color: #f59e0b; }
+    .sortable { cursor: pointer; user-select: none; white-space: nowrap; }
+    .sortable:hover { color: #818cf8; }
+    .sortable.asc .sort-arrow::after { content: " ▲"; font-size: 10px; }
+    .sortable.desc .sort-arrow::after { content: " ▼"; font-size: 10px; }
+    .sort-arrow { color: #818cf8; }
     .exposure-bar { height: 8px; background: #334155; border-radius: 4px; overflow: hidden; margin-top: 8px; }
     .exposure-fill { height: 100%; border-radius: 4px; transition: width 0.3s; }
     .settings-section { padding: 20px; }
@@ -64,7 +69,7 @@
 <div class="header">
     <h1><span>Polymarket</span> Trading Bot - Status</h1>
     <div class="header-right">
-        <span class="last-run">Last run: 0s ago (6:48 AM CDT, 03/14/2026)</span>
+        <span class="last-run">Last run: 0s ago (7:09 AM CDT, 03/14/2026)</span>
         <button class="btn btn-secondary" onclick="refreshPage()">Refresh</button>
     </div>
 </div>
@@ -89,8 +94,8 @@
         </div>
         <div class="stat-card">
             <div class="stat-label">Open Positions P&amp;L</div>
-            <div class="stat-value" style="color:#ef4444">$-4.60</div>
-            <div class="stat-sub">-2.5% on $186.09 deployed</div>
+            <div class="stat-value" style="color:#ef4444">$-4.79</div>
+            <div class="stat-sub">-2.6% on $186.09 deployed</div>
         </div>
         <div class="stat-card">
             <div class="stat-label">Cash Available (On-Chain)</div>
@@ -108,9 +113,18 @@
     <!-- Positions -->
     <div class="section">
         <div class="section-header"><h2>Open Positions (49)</h2></div>
-        <table>
-            <thead><tr><th>Side</th><th>Market</th><th>Entry</th><th>Bid</th><th>Size</th><th>P&amp;L</th><th>P&amp;L %</th></tr></thead>
-            <tbody>
+        <table id="positions-table">
+            <thead><tr>
+                <th class="sortable" data-col="0" data-type="text">Side <span class="sort-arrow"></span></th>
+                <th class="sortable" data-col="1" data-type="text">Market <span class="sort-arrow"></span></th>
+                <th class="sortable" data-col="2" data-type="num">Entry <span class="sort-arrow"></span></th>
+                <th class="sortable" data-col="3" data-type="num">Bid <span class="sort-arrow"></span></th>
+                <th class="sortable" data-col="4" data-type="num">Size <span class="sort-arrow"></span></th>
+                <th class="sortable" data-col="5" data-type="num">P&amp;L <span class="sort-arrow"></span></th>
+                <th class="sortable" data-col="6" data-type="num">P&amp;L % <span class="sort-arrow"></span></th>
+                <th class="sortable" data-col="7" data-type="num">Mom <span class="sort-arrow"></span></th>
+            </tr></thead>
+            <tbody id="positions-body">
             <tr>
                 <td><span class="side-yes">YES</span></td>
                 <td title="Will Juliana Stratton be the Democratic nominee for Senate in Illinois?">Will Juliana Stratton be the Democratic nominee for Senat...</td>
@@ -119,24 +133,27 @@
                 <td>$4.60</td>
                 <td style="color:#10b981">+$1.10</td>
                 <td style="color:#10b981;font-size:12px;">+23.8%</td>
+                <td style="color:#10b981;font-size:12px;" title="24h momentum">▲ +50.0%</td>
             </tr>
             <tr>
                 <td><span class="side-yes">YES</span></td>
                 <td title="Will Michael B. Jordan win Best Actor at the 98th Academy Awards?">Will Michael B. Jordan win Best Actor at the 98th Academy...</td>
                 <td>0.472</td>
-                <td>0.529</td>
+                <td>0.550</td>
                 <td>$2.57</td>
-                <td style="color:#10b981">+$0.31</td>
-                <td style="color:#10b981;font-size:12px;">+12.1%</td>
+                <td style="color:#10b981">+$0.42</td>
+                <td style="color:#10b981;font-size:12px;">+16.5%</td>
+                <td style="color:#ef4444;font-size:12px;" title="24h momentum">▼ -3.1%</td>
             </tr>
             <tr>
                 <td><span class="side-no">NO</span></td>
                 <td title="Will the Anaheim Ducks win the Pacific Division?">Will the Anaheim Ducks win the Pacific Division?</td>
                 <td>0.464</td>
-                <td>0.515</td>
+                <td>0.539</td>
                 <td>$2.68</td>
-                <td style="color:#10b981">+$0.29</td>
-                <td style="color:#10b981;font-size:12px;">+11.0%</td>
+                <td style="color:#10b981">+$0.43</td>
+                <td style="color:#10b981;font-size:12px;">+16.2%</td>
+                <td style="color:#10b981;font-size:12px;" title="24h momentum">▲ +5.4%</td>
             </tr>
             <tr>
                 <td><span class="side-no">NO</span></td>
@@ -146,6 +163,7 @@
                 <td>$4.68</td>
                 <td style="color:#10b981">+$0.51</td>
                 <td style="color:#10b981;font-size:12px;">+10.8%</td>
+                <td style="color:#10b981;font-size:12px;" title="24h momentum">▲ +14.8%</td>
             </tr>
             <tr>
                 <td><span class="side-no">NO</span></td>
@@ -155,6 +173,7 @@
                 <td>$5.15</td>
                 <td style="color:#10b981">+$0.50</td>
                 <td style="color:#10b981;font-size:12px;">+9.7%</td>
+                <td style="color:#10b981;font-size:12px;" title="24h momentum">▲ +14.5%</td>
             </tr>
             <tr>
                 <td><span class="side-no">NO</span></td>
@@ -164,6 +183,7 @@
                 <td>$1.93</td>
                 <td style="color:#10b981">+$0.12</td>
                 <td style="color:#10b981;font-size:12px;">+6.3%</td>
+                <td style="color:#10b981;font-size:12px;" title="24h momentum">▲ +14.5%</td>
             </tr>
             <tr>
                 <td><span class="side-yes">YES</span></td>
@@ -173,6 +193,7 @@
                 <td>$1.27</td>
                 <td style="color:#10b981">+$0.08</td>
                 <td style="color:#10b981;font-size:12px;">+6.3%</td>
+                <td style="color:#10b981;font-size:12px;" title="24h momentum">▲ +5.9%</td>
             </tr>
             <tr>
                 <td><span class="side-yes">YES</span></td>
@@ -182,6 +203,7 @@
                 <td>$4.99</td>
                 <td style="color:#10b981">+$0.31</td>
                 <td style="color:#10b981;font-size:12px;">+6.1%</td>
+                <td style="color:#10b981;font-size:12px;" title="24h momentum">▲ +6.1%</td>
             </tr>
             <tr>
                 <td><span class="side-no">NO</span></td>
@@ -191,6 +213,7 @@
                 <td>$1.70</td>
                 <td style="color:#10b981">+$0.07</td>
                 <td style="color:#10b981;font-size:12px;">+4.3%</td>
+                <td style="color:#10b981;font-size:12px;" title="24h momentum">▲ +8.5%</td>
             </tr>
             <tr>
                 <td><span class="side-yes">YES</span></td>
@@ -200,6 +223,7 @@
                 <td>$5.61</td>
                 <td style="color:#10b981">+$0.16</td>
                 <td style="color:#10b981;font-size:12px;">+2.9%</td>
+                <td style="color:#6b7280;font-size:12px;" title="24h momentum">— 0.0%</td>
             </tr>
             <tr>
                 <td><span class="side-no">NO</span></td>
@@ -209,6 +233,7 @@
                 <td>$2.52</td>
                 <td style="color:#10b981">+$0.06</td>
                 <td style="color:#10b981;font-size:12px;">+2.4%</td>
+                <td style="color:#10b981;font-size:12px;" title="24h momentum">▲ +2.4%</td>
             </tr>
             <tr>
                 <td><span class="side-yes">YES</span></td>
@@ -218,6 +243,7 @@
                 <td>$3.74</td>
                 <td style="color:#10b981">+$0.06</td>
                 <td style="color:#10b981;font-size:12px;">+1.6%</td>
+                <td style="color:#10b981;font-size:12px;" title="24h momentum">— +0.1%</td>
             </tr>
             <tr>
                 <td><span class="side-yes">YES</span></td>
@@ -227,6 +253,7 @@
                 <td>$1.83</td>
                 <td style="color:#10b981">+$0.01</td>
                 <td style="color:#10b981;font-size:12px;">+0.6%</td>
+                <td style="color:#6b7280;font-size:12px;" title="24h momentum">— 0.0%</td>
             </tr>
             <tr>
                 <td><span class="side-yes">YES</span></td>
@@ -236,6 +263,7 @@
                 <td>$4.43</td>
                 <td style="color:#10b981">+$0.00</td>
                 <td style="color:#10b981;font-size:12px;">+0.0%</td>
+                <td style="color:#10b981;font-size:12px;" title="24h momentum">— +0.1%</td>
             </tr>
             <tr>
                 <td><span class="side-no">NO</span></td>
@@ -245,6 +273,7 @@
                 <td>$2.47</td>
                 <td style="color:#10b981">+$0.00</td>
                 <td style="color:#10b981;font-size:12px;">+0.0%</td>
+                <td style="color:#6b7280;font-size:12px;" title="24h momentum">— 0.0%</td>
             </tr>
             <tr>
                 <td><span class="side-yes">YES</span></td>
@@ -254,6 +283,7 @@
                 <td>$1.81</td>
                 <td style="color:#10b981">+$0.00</td>
                 <td style="color:#10b981;font-size:12px;">+0.0%</td>
+                <td style="color:#10b981;font-size:12px;" title="24h momentum">▲ +29.4%</td>
             </tr>
             <tr>
                 <td><span class="side-no">NO</span></td>
@@ -263,6 +293,7 @@
                 <td>$1.25</td>
                 <td style="color:#10b981">+$0.00</td>
                 <td style="color:#10b981;font-size:12px;">+0.0%</td>
+                <td style="color:#10b981;font-size:12px;" title="24h momentum">▲ +3.0%</td>
             </tr>
             <tr>
                 <td><span class="side-yes">YES</span></td>
@@ -272,6 +303,17 @@
                 <td>$0.47</td>
                 <td style="color:#10b981">+$0.00</td>
                 <td style="color:#10b981;font-size:12px;">+0.0%</td>
+                <td style="color:#10b981;font-size:12px;" title="24h momentum">▲ +8.3%</td>
+            </tr>
+            <tr>
+                <td><span class="side-yes">YES</span></td>
+                <td title="Will the Democrats win the Ohio governor race in 2026?">Will the Democrats win the Ohio governor race in 2026?</td>
+                <td>0.490</td>
+                <td>0.490</td>
+                <td>$4.72</td>
+                <td style="color:#10b981">+$0.00</td>
+                <td style="color:#10b981;font-size:12px;">+0.0%</td>
+                <td style="color:#10b981;font-size:12px;" title="24h momentum">▲ +12.5%</td>
             </tr>
             <tr>
                 <td><span class="side-yes">YES</span></td>
@@ -281,6 +323,7 @@
                 <td>$3.55</td>
                 <td style="color:#ef4444">$-0.02</td>
                 <td style="color:#ef4444;font-size:12px;">-0.4%</td>
+                <td style="color:#ef4444;font-size:12px;" title="24h momentum">▼ -3.9%</td>
             </tr>
             <tr>
                 <td><span class="side-yes">YES</span></td>
@@ -290,15 +333,7 @@
                 <td>$1.34</td>
                 <td style="color:#ef4444">$-0.01</td>
                 <td style="color:#ef4444;font-size:12px;">-0.6%</td>
-            </tr>
-            <tr>
-                <td><span class="side-yes">YES</span></td>
-                <td title="Will the Democrats win the Ohio governor race in 2026?">Will the Democrats win the Ohio governor race in 2026?</td>
-                <td>0.490</td>
-                <td>0.480</td>
-                <td>$4.72</td>
-                <td style="color:#ef4444">$-0.10</td>
-                <td style="color:#ef4444;font-size:12px;">-2.0%</td>
+                <td style="color:#6b7280;font-size:12px;" title="24h momentum">— 0.0%</td>
             </tr>
             <tr>
                 <td><span class="side-no">NO</span></td>
@@ -308,6 +343,7 @@
                 <td>$2.57</td>
                 <td style="color:#ef4444">$-0.05</td>
                 <td style="color:#ef4444;font-size:12px;">-2.1%</td>
+                <td style="color:#6b7280;font-size:12px;" title="24h momentum">— 0.0%</td>
             </tr>
             <tr>
                 <td><span class="side-yes">YES</span></td>
@@ -317,6 +353,7 @@
                 <td>$2.03</td>
                 <td style="color:#ef4444">$-0.04</td>
                 <td style="color:#ef4444;font-size:12px;">-2.2%</td>
+                <td style="color:#10b981;font-size:12px;" title="24h momentum">▲ +4.6%</td>
             </tr>
             <tr>
                 <td><span class="side-no">NO</span></td>
@@ -326,6 +363,7 @@
                 <td>$5.16</td>
                 <td style="color:#ef4444">$-0.12</td>
                 <td style="color:#ef4444;font-size:12px;">-2.3%</td>
+                <td style="color:#10b981;font-size:12px;" title="24h momentum">▲ +2.6%</td>
             </tr>
             <tr>
                 <td><span class="side-yes">YES</span></td>
@@ -335,6 +373,7 @@
                 <td>$5.15</td>
                 <td style="color:#ef4444">$-0.13</td>
                 <td style="color:#ef4444;font-size:12px;">-2.4%</td>
+                <td style="color:#6b7280;font-size:12px;" title="24h momentum">— 0.0%</td>
             </tr>
             <tr>
                 <td><span class="side-yes">YES</span></td>
@@ -344,6 +383,7 @@
                 <td>$2.44</td>
                 <td style="color:#ef4444">$-0.07</td>
                 <td style="color:#ef4444;font-size:12px;">-2.9%</td>
+                <td style="color:#ef4444;font-size:12px;" title="24h momentum">▼ -5.6%</td>
             </tr>
             <tr>
                 <td><span class="side-yes">YES</span></td>
@@ -353,6 +393,7 @@
                 <td>$3.04</td>
                 <td style="color:#ef4444">$-0.12</td>
                 <td style="color:#ef4444;font-size:12px;">-3.8%</td>
+                <td style="color:#10b981;font-size:12px;" title="24h momentum">▲ +10.6%</td>
             </tr>
             <tr>
                 <td><span class="side-no">NO</span></td>
@@ -362,6 +403,7 @@
                 <td>$1.36</td>
                 <td style="color:#ef4444">$-0.05</td>
                 <td style="color:#ef4444;font-size:12px;">-3.8%</td>
+                <td style="color:#10b981;font-size:12px;" title="24h momentum">▲ +10.6%</td>
             </tr>
             <tr>
                 <td><span class="side-yes">YES</span></td>
@@ -371,6 +413,7 @@
                 <td>$11.55</td>
                 <td style="color:#ef4444">$-0.46</td>
                 <td style="color:#ef4444;font-size:12px;">-4.0%</td>
+                <td style="color:#ef4444;font-size:12px;" title="24h momentum">▼ -4.9%</td>
             </tr>
             <tr>
                 <td><span class="side-yes">YES</span></td>
@@ -380,6 +423,7 @@
                 <td>$4.36</td>
                 <td style="color:#ef4444">$-0.19</td>
                 <td style="color:#ef4444;font-size:12px;">-4.3%</td>
+                <td style="color:#6b7280;font-size:12px;" title="24h momentum">— 0.0%</td>
             </tr>
             <tr>
                 <td><span class="side-no">NO</span></td>
@@ -389,6 +433,7 @@
                 <td>$1.80</td>
                 <td style="color:#ef4444">$-0.08</td>
                 <td style="color:#ef4444;font-size:12px;">-4.3%</td>
+                <td style="color:#10b981;font-size:12px;" title="24h momentum">▲ +43.5%</td>
             </tr>
             <tr>
                 <td><span class="side-no">NO</span></td>
@@ -398,6 +443,7 @@
                 <td>$4.79</td>
                 <td style="color:#ef4444">$-0.21</td>
                 <td style="color:#ef4444;font-size:12px;">-4.4%</td>
+                <td style="color:#10b981;font-size:12px;" title="24h momentum">▲ +15.8%</td>
             </tr>
             <tr>
                 <td><span class="side-no">NO</span></td>
@@ -407,6 +453,7 @@
                 <td>$2.20</td>
                 <td style="color:#ef4444">$-0.10</td>
                 <td style="color:#ef4444;font-size:12px;">-4.5%</td>
+                <td style="color:#10b981;font-size:12px;" title="24h momentum">▲ +16.2%</td>
             </tr>
             <tr>
                 <td><span class="side-yes">YES</span></td>
@@ -416,6 +463,7 @@
                 <td>$2.48</td>
                 <td style="color:#ef4444">$-0.12</td>
                 <td style="color:#ef4444;font-size:12px;">-4.8%</td>
+                <td style="color:#10b981;font-size:12px;" title="24h momentum">▲ +1.2%</td>
             </tr>
             <tr>
                 <td><span class="side-no">NO</span></td>
@@ -425,6 +473,7 @@
                 <td>$7.06</td>
                 <td style="color:#ef4444">$-0.35</td>
                 <td style="color:#ef4444;font-size:12px;">-5.0%</td>
+                <td style="color:#10b981;font-size:12px;" title="24h momentum">▲ +5.4%</td>
             </tr>
             <tr>
                 <td><span class="side-yes">YES</span></td>
@@ -434,6 +483,7 @@
                 <td>$6.51</td>
                 <td style="color:#ef4444">$-0.33</td>
                 <td style="color:#ef4444;font-size:12px;">-5.0%</td>
+                <td style="color:#6b7280;font-size:12px;" title="24h momentum">— 0.0%</td>
             </tr>
             <tr>
                 <td><span class="side-yes">YES</span></td>
@@ -443,6 +493,7 @@
                 <td>$5.34</td>
                 <td style="color:#ef4444">$-0.27</td>
                 <td style="color:#ef4444;font-size:12px;">-5.0%</td>
+                <td style="color:#10b981;font-size:12px;" title="24h momentum">▲ +2.7%</td>
             </tr>
             <tr>
                 <td><span class="side-yes">YES</span></td>
@@ -452,6 +503,7 @@
                 <td>$1.38</td>
                 <td style="color:#ef4444">$-0.07</td>
                 <td style="color:#ef4444;font-size:12px;">-5.0%</td>
+                <td style="color:#10b981;font-size:12px;" title="24h momentum">▲ +8.1%</td>
             </tr>
             <tr>
                 <td><span class="side-yes">YES</span></td>
@@ -461,6 +513,7 @@
                 <td>$2.53</td>
                 <td style="color:#ef4444">$-0.14</td>
                 <td style="color:#ef4444;font-size:12px;">-5.6%</td>
+                <td style="color:#6b7280;font-size:12px;" title="24h momentum">— 0.0%</td>
             </tr>
             <tr>
                 <td><span class="side-yes">YES</span></td>
@@ -470,6 +523,7 @@
                 <td>$8.86</td>
                 <td style="color:#ef4444">$-0.50</td>
                 <td style="color:#ef4444;font-size:12px;">-5.7%</td>
+                <td style="color:#6b7280;font-size:12px;" title="24h momentum">— 0.0%</td>
             </tr>
             <tr>
                 <td><span class="side-no">NO</span></td>
@@ -479,6 +533,7 @@
                 <td>$5.15</td>
                 <td style="color:#ef4444">$-0.32</td>
                 <td style="color:#ef4444;font-size:12px;">-6.3%</td>
+                <td style="color:#10b981;font-size:12px;" title="24h momentum">▲ +9.9%</td>
             </tr>
             <tr>
                 <td><span class="side-yes">YES</span></td>
@@ -488,6 +543,7 @@
                 <td>$1.80</td>
                 <td style="color:#ef4444">$-0.12</td>
                 <td style="color:#ef4444;font-size:12px;">-6.5%</td>
+                <td style="color:#6b7280;font-size:12px;" title="24h momentum">— 0.0%</td>
             </tr>
             <tr>
                 <td><span class="side-no">NO</span></td>
@@ -497,6 +553,7 @@
                 <td>$4.59</td>
                 <td style="color:#ef4444">$-0.33</td>
                 <td style="color:#ef4444;font-size:12px;">-7.1%</td>
+                <td style="color:#ef4444;font-size:12px;" title="24h momentum">▼ -5.9%</td>
             </tr>
             <tr>
                 <td><span class="side-yes">YES</span></td>
@@ -506,6 +563,7 @@
                 <td>$1.69</td>
                 <td style="color:#ef4444">$-0.14</td>
                 <td style="color:#ef4444;font-size:12px;">-8.3%</td>
+                <td style="color:#6b7280;font-size:12px;" title="24h momentum">— 0.0%</td>
             </tr>
             <tr>
                 <td><span class="side-no">NO</span></td>
@@ -515,6 +573,7 @@
                 <td>$1.86</td>
                 <td style="color:#ef4444">$-0.18</td>
                 <td style="color:#ef4444;font-size:12px;">-9.5%</td>
+                <td style="color:#6b7280;font-size:12px;" title="24h momentum">— 0.0%</td>
             </tr>
             <tr>
                 <td><span class="side-yes">YES</span></td>
@@ -524,15 +583,17 @@
                 <td>$5.57</td>
                 <td style="color:#ef4444">$-0.56</td>
                 <td style="color:#ef4444;font-size:12px;">-10.0%</td>
+                <td style="color:#6b7280;font-size:12px;" title="24h momentum">— 0.0%</td>
             </tr>
             <tr>
                 <td><span class="side-no">NO</span></td>
                 <td title="Will Israel launch a major ground offensive in Lebanon by March 31?">Will Israel launch a major ground offensive in Lebanon by...</td>
                 <td>0.310</td>
-                <td>0.270</td>
+                <td>0.260</td>
                 <td>$16.65</td>
-                <td style="color:#ef4444">$-2.14</td>
-                <td style="color:#ef4444;font-size:12px;">-12.9%</td>
+                <td style="color:#ef4444">$-2.68</td>
+                <td style="color:#ef4444;font-size:12px;">-16.1%</td>
+                <td style="color:#ef4444;font-size:12px;" title="24h momentum">▼ -15.6%</td>
             </tr>
             <tr>
                 <td><span class="side-no">NO</span></td>
@@ -542,6 +603,7 @@
                 <td>$2.80</td>
                 <td style="color:#ef4444">$-0.47</td>
                 <td style="color:#ef4444;font-size:12px;">-16.7%</td>
+                <td style="color:#ef4444;font-size:12px;" title="24h momentum">▼ -10.4%</td>
             </tr>
             <tr>
                 <td><span class="side-yes">YES</span></td>
@@ -551,12 +613,14 @@
                 <td>$2.06</td>
                 <td style="color:#ef4444">$-0.41</td>
                 <td style="color:#ef4444;font-size:12px;">-20.0%</td>
+                <td style="color:#ef4444;font-size:12px;" title="24h momentum">▼ -14.1%</td>
             </tr>
             <tr style="border-top:2px solid #475569;font-weight:700;">
                 <td colspan="4" style="text-align:right;color:#94a3b8;">TOTAL</td>
                 <td>$186.09</td>
-                <td style="color:#ef4444">$-4.60</td>
-                <td style="color:#ef4444;font-size:12px;">-2.5%</td>
+                <td style="color:#ef4444">$-4.79</td>
+                <td style="color:#ef4444;font-size:12px;">-2.6%</td>
+                <td></td>
             </tr></tbody>
         </table>
     </div>
@@ -3777,7 +3841,7 @@
     <!-- Run History -->
     <div class="section">
         <div class="section-header">
-            <h2>Run History <span id="run-count" style="font-weight:400;font-size:13px;color:#94a3b8;">(251 runs)</span></h2>
+            <h2>Run History <span id="run-count" style="font-weight:400;font-size:13px;color:#94a3b8;">(252 runs)</span></h2>
             <select id="run-filter" onchange="filterRuns()" style="background:#334155;color:#e2e8f0;border:1px solid #475569;border-radius:6px;padding:4px 10px;font-size:12px;cursor:pointer;">
                 <option value="all">All Runs</option>
                 <option value="trades">Runs with Trades</option>
@@ -3790,6 +3854,17 @@
         <table>
             <thead><tr><th>Time</th><th>Status</th><th style="text-align:center;">Trades</th><th style="text-align:center;">Positions</th><th style="text-align:right;">Cash</th><th style="text-align:right;">Deployed</th><th style="text-align:right;">Run P&amp;L</th><th style="text-align:right;">Cumulative P&amp;L</th><th style="text-align:right;">Duration</th></tr></thead>
             <tbody id="run-body">
+            <tr data-trades="0" data-pnl="0" data-settings="0">
+                <td>03/14 07:01 AM</td>
+                <td><span style="color:#10b981;font-weight:600;font-size:12px;">ok</span></td>
+                <td style="text-align:center;">0</td>
+                <td style="text-align:center;">49</td>
+                <td style="text-align:right;">$2.83</td>
+                <td style="text-align:right;">$186.09</td>
+                <td style="text-align:right;color:#475569;font-weight:600;">+$0.00</td>
+                <td style="text-align:right;color:#ef4444">$-10.87</td>
+                <td style="text-align:right;color:#64748b;">469.7s</td>
+            </tr>
             <tr data-trades="0" data-pnl="0" data-settings="0">
                 <td>03/14 06:45 AM</td>
                 <td><span style="color:#10b981;font-weight:600;font-size:12px;">ok</span></td>
@@ -6693,6 +6768,57 @@ function clearDateFilter() {
     document.getElementById('date-to').value = '';
     filterTransactions();
 }
+
+// Sortable positions table
+(function() {
+    const table = document.getElementById('positions-table');
+    if (!table) return;
+    const headers = table.querySelectorAll('th.sortable');
+    let currentCol = -1;
+    let currentDir = 'desc';
+
+    headers.forEach(th => {
+        th.addEventListener('click', function() {
+            const col = parseInt(this.dataset.col);
+            const type = this.dataset.type;
+
+            if (col === currentCol) {
+                currentDir = currentDir === 'asc' ? 'desc' : 'asc';
+            } else {
+                currentCol = col;
+                currentDir = type === 'text' ? 'asc' : 'desc';
+            }
+
+            headers.forEach(h => h.classList.remove('asc', 'desc'));
+            this.classList.add(currentDir);
+
+            const tbody = document.getElementById('positions-body');
+            const rows = Array.from(tbody.querySelectorAll('tr'));
+            const totalRow = rows.find(r => r.querySelector('td[colspan]'));
+            const dataRows = rows.filter(r => !r.querySelector('td[colspan]'));
+
+            dataRows.sort((a, b) => {
+                const cellA = a.cells[col];
+                const cellB = b.cells[col];
+                if (!cellA || !cellB) return 0;
+
+                let valA, valB;
+                if (type === 'text') {
+                    valA = cellA.textContent.trim().toLowerCase();
+                    valB = cellB.textContent.trim().toLowerCase();
+                    return currentDir === 'asc' ? valA.localeCompare(valB) : valB.localeCompare(valA);
+                } else {
+                    valA = parseFloat(cellA.textContent.replace(/[^\d.\-]/g, '')) || 0;
+                    valB = parseFloat(cellB.textContent.replace(/[^\d.\-]/g, '')) || 0;
+                    return currentDir === 'asc' ? valA - valB : valB - valA;
+                }
+            });
+
+            dataRows.forEach(r => tbody.appendChild(r));
+            if (totalRow) tbody.appendChild(totalRow);
+        });
+    });
+})();
 
 function filterRuns() {
     const filter = document.getElementById('run-filter').value;
