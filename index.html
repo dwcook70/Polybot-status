@@ -64,7 +64,7 @@
 <div class="header">
     <h1><span>Polymarket</span> Trading Bot - Status</h1>
     <div class="header-right">
-        <span class="last-run">Last run: 0s ago (12:04 AM CDT, 03/14/2026)</span>
+        <span class="last-run">Last run: 1s ago (12:18 AM CDT, 03/14/2026)</span>
         <button class="btn btn-secondary" onclick="refreshPage()">Refresh</button>
     </div>
 </div>
@@ -89,7 +89,7 @@
         </div>
         <div class="stat-card">
             <div class="stat-label">Open Positions P&amp;L</div>
-            <div class="stat-value" style="color:#ef4444">$-3.66</div>
+            <div class="stat-value" style="color:#ef4444">$-3.70</div>
             <div class="stat-sub">-2.1% on $176.82 deployed</div>
         </div>
         <div class="stat-card">
@@ -214,10 +214,10 @@
                 <td><span class="side-no">NO</span></td>
                 <td title="Will Choo Mi-ae win the 2026 Gyeonggi Province Gubernatorial Election?">Will Choo Mi-ae win the 2026 Gyeonggi Province Gubernator...</td>
                 <td>0.366</td>
-                <td>0.373</td>
+                <td>0.371</td>
                 <td>$5.15</td>
-                <td style="color:#10b981">+$0.09</td>
-                <td style="color:#10b981;font-size:12px;">+1.8%</td>
+                <td style="color:#10b981">+$0.06</td>
+                <td style="color:#10b981;font-size:12px;">+1.2%</td>
             </tr>
             <tr>
                 <td><span class="side-yes">YES</span></td>
@@ -463,15 +463,6 @@
                 <td style="color:#ef4444;font-size:12px;">-5.7%</td>
             </tr>
             <tr>
-                <td><span class="side-yes">YES</span></td>
-                <td title="Will Sweden qualify for the 2026 FIFA World Cup?">Will Sweden qualify for the 2026 FIFA World Cup?</td>
-                <td>0.320</td>
-                <td>0.300</td>
-                <td>$0.47</td>
-                <td style="color:#ef4444">$-0.03</td>
-                <td style="color:#ef4444;font-size:12px;">-6.3%</td>
-            </tr>
-            <tr>
                 <td><span class="side-no">NO</span></td>
                 <td title="Will the Miami Heat win the 2025–2026 NBA Southeast Division?">Will the Miami Heat win the 2025–2026 NBA Southeast Divis...</td>
                 <td>0.640</td>
@@ -497,6 +488,15 @@
                 <td>$1.69</td>
                 <td style="color:#ef4444">$-0.14</td>
                 <td style="color:#ef4444;font-size:12px;">-8.3%</td>
+            </tr>
+            <tr>
+                <td><span class="side-yes">YES</span></td>
+                <td title="Will Sweden qualify for the 2026 FIFA World Cup?">Will Sweden qualify for the 2026 FIFA World Cup?</td>
+                <td>0.320</td>
+                <td>0.290</td>
+                <td>$0.47</td>
+                <td style="color:#ef4444">$-0.04</td>
+                <td style="color:#ef4444;font-size:12px;">-9.4%</td>
             </tr>
             <tr>
                 <td><span class="side-no">NO</span></td>
@@ -537,7 +537,7 @@
             <tr style="border-top:2px solid #475569;font-weight:700;">
                 <td colspan="4" style="text-align:right;color:#94a3b8;">TOTAL</td>
                 <td>$176.82</td>
-                <td style="color:#ef4444">$-3.66</td>
+                <td style="color:#ef4444">$-3.70</td>
                 <td style="color:#ef4444;font-size:12px;">-2.1%</td>
             </tr></tbody>
         </table>
@@ -876,12 +876,22 @@
             <label>To:</label>
             <input type="date" id="date-to" onchange="filterTransactions()">
             <button class="btn btn-secondary btn-sm" onclick="clearDateFilter()">Clear</button>
-            <span class="txn-count" id="txn-count">281 transaction(s)</span>
+            <span class="txn-count" id="txn-count">282 transaction(s)</span>
         </div>
         <div style="max-height:400px;overflow-y:auto;">
         <table>
             <thead><tr><th>Time</th><th>Action</th><th>Side</th><th>Market</th><th>Price</th><th>Size</th><th>P&amp;L</th><th>Reason</th></tr></thead>
             <tbody id="txn-body">
+            <tr class="txn-row" data-date="2026-03-14">
+                <td>03/14 12:18 AM</td>
+                <td><span style="color:#10b981;font-weight:700;font-size:11px;">BUY</span></td>
+                <td><span class="side-no">NO</span></td>
+                <td title="Will Italy qualify for the 2026 FIFA World Cup?">Will Italy qualify for the 2026 FIFA World...</td>
+                <td>$0.425</td>
+                <td>$4.69</td>
+                <td></td>
+                <td title="MOMENTUM: no momentum +4.9% (24h), +9.0% (6h); high uncertainty (0.57/0.42); good volume ($934 24h); resolves in 29 days" style="color:#64748b;font-size:12px;">MOMENTUM: no momentum +4.9% (24h), +9...</td>
+            </tr>
             <tr class="txn-row" data-date="2026-03-14">
                 <td>03/14 12:04 AM</td>
                 <td><span style="color:#10b981;font-weight:700;font-size:11px;">BUY</span></td>
@@ -3699,7 +3709,7 @@
     <!-- Run History -->
     <div class="section">
         <div class="section-header">
-            <h2>Run History <span id="run-count" style="font-weight:400;font-size:13px;color:#94a3b8;">(224 runs)</span></h2>
+            <h2>Run History <span id="run-count" style="font-weight:400;font-size:13px;color:#94a3b8;">(225 runs)</span></h2>
             <select id="run-filter" onchange="filterRuns()" style="background:#334155;color:#e2e8f0;border:1px solid #475569;border-radius:6px;padding:4px 10px;font-size:12px;cursor:pointer;">
                 <option value="all">All Runs</option>
                 <option value="trades">Runs with Trades</option>
@@ -3712,6 +3722,17 @@
         <table>
             <thead><tr><th>Time</th><th>Status</th><th style="text-align:center;">Trades</th><th style="text-align:center;">Positions</th><th style="text-align:right;">Cash</th><th style="text-align:right;">Deployed</th><th style="text-align:right;">Run P&amp;L</th><th style="text-align:right;">Cumulative P&amp;L</th><th style="text-align:right;">Duration</th></tr></thead>
             <tbody id="run-body">
+            <tr data-trades="1" data-pnl="0" data-settings="0">
+                <td>03/14 12:15 AM</td>
+                <td><span style="color:#10b981;font-weight:600;font-size:12px;">ok</span></td>
+                <td style="text-align:center;">1</td>
+                <td style="text-align:center;">47</td>
+                <td style="text-align:right;">$45.09</td>
+                <td style="text-align:right;">$176.82</td>
+                <td style="text-align:right;color:#475569;font-weight:600;">+$0.00</td>
+                <td style="text-align:right;color:#ef4444">$-10.87</td>
+                <td style="text-align:right;color:#64748b;">209.9s</td>
+            </tr>
             <tr data-trades="1" data-pnl="0" data-settings="0">
                 <td>03/14 12:00 AM</td>
                 <td><span style="color:#10b981;font-weight:600;font-size:12px;">ok</span></td>
