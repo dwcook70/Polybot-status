@@ -69,7 +69,8 @@
 <div class="header">
     <h1><span style="color:#818cf8;font-size:26px;letter-spacing:0.02em;">PolyChirp</span><sup style="font-size:10px;color:#94a3b8;vertical-align:super;">TM</sup></h1>
     <div class="header-right">
-        <span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#10b981;margin-right:4px;"></span><span class="last-run">Last run: 0s ago (3:38 PM CDT, 03/16/2026)</span>
+        <a href="analytics.html" style="color:#60a5fa;text-decoration:none;font-size:13px;padding:6px 14px;border:1px solid #334155;border-radius:6px;margin-right:8px;">Analytics</a>
+        <span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#10b981;margin-right:4px;"></span><span class="last-run">Last run: 0s ago (3:52 PM CDT, 03/16/2026)</span>
         <button class="btn btn-secondary" onclick="refreshPage()">Refresh</button>
     </div>
 </div>
@@ -129,13 +130,13 @@
     <div class="stats-grid">
         <div class="stat-card">
             <div class="stat-label">Portfolio Value</div>
-            <div class="stat-value">$196.39</div>
-            <div class="stat-sub" style="color:#ef4444">$-42.61 (-17.8%) from $239.00</div>
+            <div class="stat-value">$199.68</div>
+            <div class="stat-sub" style="color:#ef4444">$-39.32 (-16.5%) from $239.00</div>
         </div>
         <div class="stat-card">
             <div class="stat-label">Win / Loss (Open)</div>
-            <div class="stat-value"><span style="color:#10b981">9W</span> <span style="color:#64748b">/</span> <span style="color:#ef4444">24L</span></div>
-            <div class="stat-sub"><span style="color:#10b981">+$1.90</span> / <span style="color:#ef4444">$-4.95</span> | <span style="color:#94a3b8">3 near</span></div>
+            <div class="stat-value"><span style="color:#10b981">9W</span> <span style="color:#64748b">/</span> <span style="color:#ef4444">25L</span></div>
+            <div class="stat-sub"><span style="color:#10b981">+$2.06</span> / <span style="color:#ef4444">$-6.92</span> | <span style="color:#94a3b8">3 near</span></div>
         </div>
         <div class="stat-card">
             <div class="stat-label">Realized P&amp;L</div>
@@ -144,8 +145,8 @@
         </div>
         <div class="stat-card">
             <div class="stat-label">Open Positions P&amp;L</div>
-            <div class="stat-value" style="color:#ef4444">$-3.05</div>
-            <div class="stat-sub">-1.8% on $172.83 deployed</div>
+            <div class="stat-value" style="color:#ef4444">$-4.86</div>
+            <div class="stat-sub">-2.7% on $177.93 deployed</div>
         </div>
         <div class="stat-card">
             <div class="stat-label">Cash Available (On-Chain)</div>
@@ -154,14 +155,14 @@
         </div>
         <div class="stat-card">
             <div class="stat-label">Exposure</div>
-            <div class="stat-value">$172.83</div>
-            <div class="exposure-bar"><div class="exposure-fill" style="width:90%;background:#ef4444"></div></div>
-            <div class="stat-sub">72.3% of bankroll (max 85%)</div>
+            <div class="stat-value">$177.93</div>
+            <div class="exposure-bar"><div class="exposure-fill" style="width:93%;background:#ef4444"></div></div>
+            <div class="stat-sub">74.4% of bankroll (max 85%)</div>
         </div>
         <div class="stat-card">
             <div class="stat-label">Portfolio Momentum</div>
-            <div class="stat-value" style="color:#10b981">+5.5%</div>
-            <div class="stat-sub">Breadth: <span style="color:#f59e0b">52%</span> of positions trending up</div>
+            <div class="stat-value" style="color:#10b981">+4.1%</div>
+            <div class="stat-sub">Breadth: <span style="color:#f59e0b">47%</span> of positions trending up</div>
         </div>
     </div>
 
@@ -169,8 +170,8 @@
     <div class="stat-card" style="margin-bottom:16px;border:1px solid #334155;">
         <div class="stat-label" style="font-size:13px;margin-bottom:6px;">Accounting Proof</div>
         <table style="width:100%;font-size:13px;color:#e2e8f0;border-collapse:collapse;">
-            <tr><td style="padding:2px 0;">Cost Basis (open positions)</td><td style="text-align:right;">$172.83</td></tr>
-            <tr><td style="padding:2px 0;">Cash Available</td><td style="text-align:right;">$31.68</td></tr>
+            <tr><td style="padding:2px 0;">Cost Basis (open positions)</td><td style="text-align:right;">$177.93</td></tr>
+            <tr><td style="padding:2px 0;">Cash Available</td><td style="text-align:right;">$26.58</td></tr>
             <tr><td style="padding:2px 0;color:#ef4444">Plus Realized P&amp;L ($-34.62)</td><td style="text-align:right;color:#ef4444">+$34.62</td></tr>
             <tr style="border-top:1px solid #475569;font-weight:700;">
                 <td style="padding:4px 0;">Computed Starting Balance</td>
@@ -186,7 +187,7 @@
 
     <!-- Positions -->
     <div class="section">
-        <div class="section-header"><h2>Open Positions (33)</h2></div>
+        <div class="section-header"><h2>Open Positions (34)</h2></div>
         <table id="positions-table">
             <thead><tr>
                 <th class="sortable" data-col="0" data-type="text">Side <span class="sort-arrow"></span></th>
@@ -208,8 +209,8 @@
                 <td>$3.92</td>
                 <td style="color:#ef4444">$-0.52</td>
                 <td style="color:#ef4444;font-size:12px;">-11.6%</td>
-                <td style="color:#10b981;font-size:12px;" title="24h momentum">▲ +41.1%</td>
-                <td style="color:#10b981;font-size:12px;text-align:center;" title="Position age">15h 30m</td>
+                <td style="color:#10b981;font-size:12px;" title="24h momentum">▲ +37.5%</td>
+                <td style="color:#10b981;font-size:12px;text-align:center;" title="Position age">15h 45m</td>
             </tr>
             <tr>
                 <td><span class="side-yes">YES</span></td>
@@ -220,7 +221,7 @@
                 <td style="color:#10b981">+$0.06</td>
                 <td style="color:#10b981;font-size:12px;">+1.4%</td>
                 <td style="color:#10b981;font-size:12px;" title="24h momentum">▲ +30.4%</td>
-                <td style="color:#10b981;font-size:12px;text-align:center;" title="Position age">15h 34m</td>
+                <td style="color:#10b981;font-size:12px;text-align:center;" title="Position age">15h 48m</td>
             </tr>
             <tr>
                 <td><span class="side-no">NO</span></td>
@@ -231,7 +232,18 @@
                 <td style="color:#10b981">+$0.32</td>
                 <td style="color:#10b981;font-size:12px;">+3.5%</td>
                 <td style="color:#10b981;font-size:12px;" title="24h momentum">▲ +27.7%</td>
-                <td style="color:#10b981;font-size:12px;text-align:center;" title="Position age">20h 30m</td>
+                <td style="color:#10b981;font-size:12px;text-align:center;" title="Position age">20h 45m</td>
+            </tr>
+            <tr>
+                <td><span class="side-yes">YES</span></td>
+                <td title="Will Paloma Valencia win the 2026 Colombian presidential election?">Will Paloma Valencia win the 2026 Colombian presidential ... <span style="background:#7f1d1d;color:#fca5a5;font-size:9px;padding:1px 4px;border-radius:3px;" title="Bought 6x, sold 1x">6x</span></td>
+                <td>0.382</td>
+                <td>0.400</td>
+                <td>$4.80</td>
+                <td style="color:#10b981">+$0.22</td>
+                <td style="color:#10b981;font-size:12px;">+4.8%</td>
+                <td style="color:#10b981;font-size:12px;" title="24h momentum">▲ +12.5%</td>
+                <td style="color:#10b981;font-size:12px;text-align:center;" title="Position age">2h 33m</td>
             </tr>
             <tr>
                 <td><span class="side-no">NO</span></td>
@@ -241,30 +253,8 @@
                 <td>$4.66</td>
                 <td style="color:#10b981">+$0.25</td>
                 <td style="color:#10b981;font-size:12px;">+5.8% <span style="background:#374151;color:#f59e0b;font-size:9px;padding:1px 4px;border-radius:3px;" title="Approaching trailing TP trigger (10%)">5.8%→10%</span></td>
-                <td style="color:#10b981;font-size:12px;" title="24h momentum">▲ +15.2%</td>
-                <td style="color:#10b981;font-size:12px;text-align:center;" title="Position age">15h 30m</td>
-            </tr>
-            <tr>
-                <td><span class="side-no">NO</span></td>
-                <td title="Will Liverpool finish in the top 4 of the EPL 2025–26 standings?">Will Liverpool finish in the top 4 of the EPL 2025–26 sta... <span style="background:#7f1d1d;color:#fca5a5;font-size:9px;padding:1px 4px;border-radius:3px;" title="Bought 8x, sold 1x">8x</span></td>
-                <td>0.530</td>
-                <td>0.510</td>
-                <td>$4.62</td>
-                <td style="color:#ef4444">$-0.18</td>
-                <td style="color:#ef4444;font-size:12px;">-3.8%</td>
-                <td style="color:#10b981;font-size:12px;" title="24h momentum">▲ +10.3%</td>
-                <td style="color:#10b981;font-size:12px;text-align:center;" title="Position age">20h 7m</td>
-            </tr>
-            <tr>
-                <td><span class="side-yes">YES</span></td>
-                <td title="Will Paloma Valencia win the 2026 Colombian presidential election?">Will Paloma Valencia win the 2026 Colombian presidential ... <span style="background:#7f1d1d;color:#fca5a5;font-size:9px;padding:1px 4px;border-radius:3px;" title="Bought 6x, sold 1x">6x</span></td>
-                <td>0.382</td>
-                <td>0.387</td>
-                <td>$4.64</td>
-                <td style="color:#10b981">+$0.06</td>
-                <td style="color:#10b981;font-size:12px;">+1.4%</td>
-                <td style="color:#10b981;font-size:12px;" title="24h momentum">▲ +9.9%</td>
-                <td style="color:#10b981;font-size:12px;text-align:center;" title="Position age">2h 18m</td>
+                <td style="color:#10b981;font-size:12px;" title="24h momentum">▲ +12.0%</td>
+                <td style="color:#10b981;font-size:12px;text-align:center;" title="Position age">15h 45m</td>
             </tr>
             <tr>
                 <td><span class="side-yes">YES</span></td>
@@ -274,30 +264,19 @@
                 <td>$9.87</td>
                 <td style="color:#10b981">+$0.21</td>
                 <td style="color:#10b981;font-size:12px;">+2.2%</td>
-                <td style="color:#10b981;font-size:12px;" title="24h momentum">▲ +9.4%</td>
-                <td style="color:#10b981;font-size:12px;text-align:center;" title="Position age">12h 45m</td>
-            </tr>
-            <tr>
-                <td><span class="side-yes">YES</span></td>
-                <td title="Will Anthropic have the best AI model at the end of June 2026?">Will Anthropic have the best AI model at the end of June ... <span style="background:#7f1d1d;color:#fca5a5;font-size:9px;padding:1px 4px;border-radius:3px;" title="Bought 3x, sold 1x">3x</span></td>
-                <td>0.506</td>
-                <td>0.531</td>
-                <td>$5.16</td>
-                <td style="color:#10b981">+$0.24</td>
-                <td style="color:#10b981;font-size:12px;">+4.9%</td>
-                <td style="color:#10b981;font-size:12px;" title="24h momentum">▲ +6.8%</td>
-                <td style="color:#6b7280;font-size:12px;text-align:center;" title="Position age">1d 8h</td>
+                <td style="color:#10b981;font-size:12px;" title="24h momentum">▲ +9.7%</td>
+                <td style="color:#10b981;font-size:12px;text-align:center;" title="Position age">13h 0m</td>
             </tr>
             <tr>
                 <td><span class="side-no">NO</span></td>
-                <td title="Russia-Ukraine Ceasefire before GTA VI?">Russia-Ukraine Ceasefire before GTA VI? <span style="background:#7f1d1d;color:#fca5a5;font-size:9px;padding:1px 4px;border-radius:3px;" title="Bought 2x, sold 1x">2x</span></td>
-                <td>0.420</td>
-                <td>0.460</td>
-                <td>$5.18</td>
-                <td style="color:#10b981">+$0.45</td>
-                <td style="color:#10b981;font-size:12px;">+9.5% <span style="background:#374151;color:#f59e0b;font-size:9px;padding:1px 4px;border-radius:3px;" title="Approaching trailing TP trigger (10%)">9.5%→10%</span></td>
-                <td style="color:#10b981;font-size:12px;" title="24h momentum">▲ +6.7%</td>
-                <td style="color:#6b7280;font-size:12px;text-align:center;" title="Position age">2d 14h</td>
+                <td title="Will Liverpool finish in the top 4 of the EPL 2025–26 standings?">Will Liverpool finish in the top 4 of the EPL 2025–26 sta... <span style="background:#7f1d1d;color:#fca5a5;font-size:9px;padding:1px 4px;border-radius:3px;" title="Bought 8x, sold 1x">8x</span></td>
+                <td>0.530</td>
+                <td>0.510</td>
+                <td>$4.62</td>
+                <td style="color:#ef4444">$-0.18</td>
+                <td style="color:#ef4444;font-size:12px;">-3.8%</td>
+                <td style="color:#10b981;font-size:12px;" title="24h momentum">▲ +9.3%</td>
+                <td style="color:#10b981;font-size:12px;text-align:center;" title="Position age">20h 22m</td>
             </tr>
             <tr>
                 <td><span class="side-no">NO</span></td>
@@ -307,8 +286,19 @@
                 <td>$4.25</td>
                 <td style="color:#ef4444">$-0.29</td>
                 <td style="color:#ef4444;font-size:12px;">-6.5%</td>
-                <td style="color:#10b981;font-size:12px;" title="24h momentum">▲ +6.1%</td>
-                <td style="color:#10b981;font-size:12px;text-align:center;" title="Position age">5h 30m</td>
+                <td style="color:#10b981;font-size:12px;" title="24h momentum">▲ +7.0%</td>
+                <td style="color:#10b981;font-size:12px;text-align:center;" title="Position age">5h 45m</td>
+            </tr>
+            <tr>
+                <td><span class="side-yes">YES</span></td>
+                <td title="Will Anthropic have the best AI model at the end of June 2026?">Will Anthropic have the best AI model at the end of June ... <span style="background:#7f1d1d;color:#fca5a5;font-size:9px;padding:1px 4px;border-radius:3px;" title="Bought 3x, sold 1x">3x</span></td>
+                <td>0.506</td>
+                <td>0.531</td>
+                <td>$5.16</td>
+                <td style="color:#10b981">+$0.24</td>
+                <td style="color:#10b981;font-size:12px;">+4.9%</td>
+                <td style="color:#10b981;font-size:12px;" title="24h momentum">▲ +6.6%</td>
+                <td style="color:#6b7280;font-size:12px;text-align:center;" title="Position age">1d 8h</td>
             </tr>
             <tr>
                 <td><span class="side-yes">YES</span></td>
@@ -318,30 +308,30 @@
                 <td>$8.16</td>
                 <td style="color:#ef4444">$-0.79</td>
                 <td style="color:#ef4444;font-size:12px;">-8.8%</td>
-                <td style="color:#10b981;font-size:12px;" title="24h momentum">▲ +4.8%</td>
-                <td style="color:#10b981;font-size:12px;text-align:center;" title="Position age">2h 22m</td>
+                <td style="color:#10b981;font-size:12px;" title="24h momentum">▲ +6.3%</td>
+                <td style="color:#10b981;font-size:12px;text-align:center;" title="Position age">2h 37m</td>
+            </tr>
+            <tr>
+                <td><span class="side-no">NO</span></td>
+                <td title="Russia-Ukraine Ceasefire before GTA VI?">Russia-Ukraine Ceasefire before GTA VI? <span style="background:#7f1d1d;color:#fca5a5;font-size:9px;padding:1px 4px;border-radius:3px;" title="Bought 2x, sold 1x">2x</span></td>
+                <td>0.420</td>
+                <td>0.460</td>
+                <td>$5.18</td>
+                <td style="color:#10b981">+$0.45</td>
+                <td style="color:#10b981;font-size:12px;">+9.5% <span style="background:#374151;color:#f59e0b;font-size:9px;padding:1px 4px;border-radius:3px;" title="Approaching trailing TP trigger (10%)">9.5%→10%</span></td>
+                <td style="color:#10b981;font-size:12px;" title="24h momentum">▲ +4.5%</td>
+                <td style="color:#6b7280;font-size:12px;text-align:center;" title="Position age">2d 15h</td>
             </tr>
             <tr>
                 <td><span class="side-no">NO</span></td>
                 <td title="Will the Boston Celtics win the NBA Eastern Conference Finals?">Will the Boston Celtics win the NBA Eastern Conference Fi... <span style="background:#7f1d1d;color:#fca5a5;font-size:9px;padding:1px 4px;border-radius:3px;" title="Bought 2x, sold 1x">2x</span></td>
                 <td>0.682</td>
-                <td>0.673</td>
+                <td>0.674</td>
                 <td>$4.72</td>
                 <td style="color:#ef4444">$-0.06</td>
-                <td style="color:#ef4444;font-size:12px;">-1.3%</td>
-                <td style="color:#10b981;font-size:12px;" title="24h momentum">▲ +2.6%</td>
-                <td style="color:#10b981;font-size:12px;text-align:center;" title="Position age">12h 49m</td>
-            </tr>
-            <tr>
-                <td><span class="side-no">NO</span></td>
-                <td title="New Playboi Carti Album before GTA VI?">New Playboi Carti Album before GTA VI? <span style="background:#7f1d1d;color:#fca5a5;font-size:9px;padding:1px 4px;border-radius:3px;" title="Bought 5x, sold 2x">5x</span></td>
-                <td>0.435</td>
-                <td>0.430</td>
-                <td>$4.45</td>
-                <td style="color:#ef4444">$-0.05</td>
-                <td style="color:#ef4444;font-size:12px;">-1.1%</td>
-                <td style="color:#10b981;font-size:12px;" title="24h momentum">▲ +2.3%</td>
-                <td style="color:#10b981;font-size:12px;text-align:center;" title="Position age">23h 3m</td>
+                <td style="color:#ef4444;font-size:12px;">-1.2%</td>
+                <td style="color:#10b981;font-size:12px;" title="24h momentum">▲ +3.0%</td>
+                <td style="color:#10b981;font-size:12px;text-align:center;" title="Position age">13h 4m</td>
             </tr>
             <tr>
                 <td><span class="side-yes">YES</span></td>
@@ -352,7 +342,7 @@
                 <td style="color:#ef4444">$-0.19</td>
                 <td style="color:#ef4444;font-size:12px;">-4.3%</td>
                 <td style="color:#10b981;font-size:12px;" title="24h momentum">▲ +2.3%</td>
-                <td style="color:#10b981;font-size:12px;text-align:center;" title="Position age">15h 45m</td>
+                <td style="color:#10b981;font-size:12px;text-align:center;" title="Position age">16h 0m</td>
             </tr>
             <tr>
                 <td><span class="side-no">NO</span></td>
@@ -385,16 +375,16 @@
                 <td style="color:#ef4444">$-0.04</td>
                 <td style="color:#ef4444;font-size:12px;">-0.8%</td>
                 <td style="color:#10b981;font-size:12px;" title="24h momentum">▲ +0.8%</td>
-                <td style="color:#10b981;font-size:12px;text-align:center;" title="Position age">20h 4m</td>
+                <td style="color:#10b981;font-size:12px;text-align:center;" title="Position age">20h 19m</td>
             </tr>
             <tr>
                 <td><span class="side-yes">YES</span></td>
                 <td title="Will bitcoin hit $1m before GTA VI?">Will bitcoin hit $1m before GTA VI? <span style="background:#7f1d1d;color:#fca5a5;font-size:9px;padding:1px 4px;border-radius:3px;" title="Bought 2x, sold 0x">2x</span></td>
                 <td>0.488</td>
-                <td>0.484</td>
-                <td>$4.39</td>
-                <td style="color:#ef4444">$-0.04</td>
-                <td style="color:#ef4444;font-size:12px;">-0.8%</td>
+                <td>0.485</td>
+                <td>$4.40</td>
+                <td style="color:#ef4444">$-0.03</td>
+                <td style="color:#ef4444;font-size:12px;">-0.6%</td>
                 <td style="color:#10b981;font-size:12px;" title="24h momentum">— +0.2%</td>
                 <td style="color:#6b7280;font-size:12px;text-align:center;" title="Position age">4d 20h</td>
             </tr>
@@ -406,17 +396,6 @@
                 <td>$8.36</td>
                 <td style="color:#ef4444">$-0.50</td>
                 <td style="color:#ef4444;font-size:12px;">-5.7%</td>
-                <td style="color:#6b7280;font-size:12px;" title="24h momentum">— 0.0%</td>
-                <td style="color:#6b7280;font-size:12px;text-align:center;" title="Position age">4d 20h</td>
-            </tr>
-            <tr>
-                <td><span class="side-yes">YES</span></td>
-                <td title="Will the Democrats win the Ohio Senate race in 2026?">Will the Democrats win the Ohio Senate race in 2026?</td>
-                <td>0.490</td>
-                <td>0.520</td>
-                <td>$5.29</td>
-                <td style="color:#10b981">+$0.31</td>
-                <td style="color:#10b981;font-size:12px;">+6.1% <span style="background:#374151;color:#f59e0b;font-size:9px;padding:1px 4px;border-radius:3px;" title="Approaching trailing TP trigger (10%)">6.1%→10%</span></td>
                 <td style="color:#6b7280;font-size:12px;" title="24h momentum">— 0.0%</td>
                 <td style="color:#6b7280;font-size:12px;text-align:center;" title="Position age">4d 20h</td>
             </tr>
@@ -473,7 +452,7 @@
                 <td style="color:#ef4444">$-0.10</td>
                 <td style="color:#ef4444;font-size:12px;">-2.0%</td>
                 <td style="color:#6b7280;font-size:12px;" title="24h momentum">— 0.0%</td>
-                <td style="color:#6b7280;font-size:12px;text-align:center;" title="Position age">1d 0h</td>
+                <td style="color:#6b7280;font-size:12px;text-align:center;" title="Position age">1d 1h</td>
             </tr>
             <tr>
                 <td><span class="side-no">NO</span></td>
@@ -484,7 +463,7 @@
                 <td style="color:#ef4444">$-0.08</td>
                 <td style="color:#ef4444;font-size:12px;">-0.8%</td>
                 <td style="color:#6b7280;font-size:12px;" title="24h momentum">— 0.0%</td>
-                <td style="color:#10b981;font-size:12px;text-align:center;" title="Position age">20h 4m</td>
+                <td style="color:#10b981;font-size:12px;text-align:center;" title="Position age">20h 19m</td>
             </tr>
             <tr>
                 <td><span class="side-no">NO</span></td>
@@ -495,7 +474,7 @@
                 <td style="color:#ef4444">$-0.14</td>
                 <td style="color:#ef4444;font-size:12px;">-2.7%</td>
                 <td style="color:#6b7280;font-size:12px;" title="24h momentum">— 0.0%</td>
-                <td style="color:#10b981;font-size:12px;text-align:center;" title="Position age">18h 30m</td>
+                <td style="color:#10b981;font-size:12px;text-align:center;" title="Position age">18h 45m</td>
             </tr>
             <tr>
                 <td><span class="side-yes">YES</span></td>
@@ -506,7 +485,7 @@
                 <td style="color:#ef4444">$-0.28</td>
                 <td style="color:#ef4444;font-size:12px;">-2.8%</td>
                 <td style="color:#6b7280;font-size:12px;" title="24h momentum">— 0.0%</td>
-                <td style="color:#10b981;font-size:12px;text-align:center;" title="Position age">12h 30m</td>
+                <td style="color:#10b981;font-size:12px;text-align:center;" title="Position age">12h 45m</td>
             </tr>
             <tr>
                 <td><span class="side-yes">YES</span></td>
@@ -520,6 +499,39 @@
                 <td style="color:#6b7280;font-size:12px;text-align:center;" title="Position age">4d 20h</td>
             </tr>
             <tr>
+                <td><span class="side-yes">YES</span></td>
+                <td title="Will the Democrats win the Ohio Senate race in 2026?">Will the Democrats win the Ohio Senate race in 2026?</td>
+                <td>0.490</td>
+                <td>0.520</td>
+                <td>$5.29</td>
+                <td style="color:#10b981">+$0.31</td>
+                <td style="color:#10b981;font-size:12px;">+6.1% <span style="background:#374151;color:#f59e0b;font-size:9px;padding:1px 4px;border-radius:3px;" title="Approaching trailing TP trigger (10%)">6.1%→10%</span></td>
+                <td style="color:#ef4444;font-size:12px;" title="24h momentum">▼ -0.9%</td>
+                <td style="color:#6b7280;font-size:12px;text-align:center;" title="Position age">4d 20h</td>
+            </tr>
+            <tr>
+                <td><span class="side-yes">YES</span></td>
+                <td title="Starmer out by June 30, 2026?">Starmer out by June 30, 2026? <span style="background:#7f1d1d;color:#fca5a5;font-size:9px;padding:1px 4px;border-radius:3px;" title="Bought 3x, sold 1x">3x</span></td>
+                <td>0.460</td>
+                <td>0.440</td>
+                <td>$4.68</td>
+                <td style="color:#ef4444">$-0.21</td>
+                <td style="color:#ef4444;font-size:12px;">-4.3%</td>
+                <td style="color:#ef4444;font-size:12px;" title="24h momentum">▼ -1.1%</td>
+                <td style="color:#10b981;font-size:12px;text-align:center;" title="Position age">7h 37m</td>
+            </tr>
+            <tr>
+                <td><span class="side-no">NO</span></td>
+                <td title="New Playboi Carti Album before GTA VI?">New Playboi Carti Album before GTA VI? <span style="background:#7f1d1d;color:#fca5a5;font-size:9px;padding:1px 4px;border-radius:3px;" title="Bought 5x, sold 2x">5x</span></td>
+                <td>0.435</td>
+                <td>0.430</td>
+                <td>$4.45</td>
+                <td style="color:#ef4444">$-0.05</td>
+                <td style="color:#ef4444;font-size:12px;">-1.1%</td>
+                <td style="color:#ef4444;font-size:12px;" title="24h momentum">▼ -1.1%</td>
+                <td style="color:#10b981;font-size:12px;text-align:center;" title="Position age">23h 18m</td>
+            </tr>
+            <tr>
                 <td><span class="side-no">NO</span></td>
                 <td title="Will John Cornyn win the 2026 Texas Republican Primary?">Will John Cornyn win the 2026 Texas Republican Primary? <span style="background:#7f1d1d;color:#fca5a5;font-size:9px;padding:1px 4px;border-radius:3px;" title="Bought 3x, sold 0x">3x</span></td>
                 <td>0.399</td>
@@ -528,7 +540,7 @@
                 <td style="color:#ef4444">$-0.12</td>
                 <td style="color:#ef4444;font-size:12px;">-2.3%</td>
                 <td style="color:#ef4444;font-size:12px;" title="24h momentum">▼ -1.2%</td>
-                <td style="color:#10b981;font-size:12px;text-align:center;" title="Position age">20h 0m</td>
+                <td style="color:#10b981;font-size:12px;text-align:center;" title="Position age">20h 15m</td>
             </tr>
             <tr>
                 <td><span class="side-yes">YES</span></td>
@@ -539,18 +551,7 @@
                 <td style="color:#ef4444">$-0.27</td>
                 <td style="color:#ef4444;font-size:12px;">-5.8%</td>
                 <td style="color:#ef4444;font-size:12px;" title="24h momentum">▼ -2.0%</td>
-                <td style="color:#10b981;font-size:12px;text-align:center;" title="Position age">10h 7m</td>
-            </tr>
-            <tr>
-                <td><span class="side-yes">YES</span></td>
-                <td title="Starmer out by June 30, 2026?">Starmer out by June 30, 2026? <span style="background:#7f1d1d;color:#fca5a5;font-size:9px;padding:1px 4px;border-radius:3px;" title="Bought 3x, sold 1x">3x</span></td>
-                <td>0.460</td>
-                <td>0.450</td>
-                <td>$4.79</td>
-                <td style="color:#ef4444">$-0.11</td>
-                <td style="color:#ef4444;font-size:12px;">-2.2%</td>
-                <td style="color:#ef4444;font-size:12px;" title="24h momentum">▼ -2.2%</td>
-                <td style="color:#10b981;font-size:12px;text-align:center;" title="Position age">7h 22m</td>
+                <td style="color:#10b981;font-size:12px;text-align:center;" title="Position age">10h 22m</td>
             </tr>
             <tr>
                 <td><span class="side-no">NO</span></td>
@@ -560,14 +561,25 @@
                 <td>$3.85</td>
                 <td style="color:#ef4444">$-0.45</td>
                 <td style="color:#ef4444;font-size:12px;">-10.5%</td>
-                <td style="color:#ef4444;font-size:12px;" title="24h momentum">▼ -9.2%</td>
-                <td style="color:#10b981;font-size:12px;text-align:center;" title="Position age">1h 22m</td>
+                <td style="color:#ef4444;font-size:12px;" title="24h momentum">▼ -7.9%</td>
+                <td style="color:#10b981;font-size:12px;text-align:center;" title="Position age">1h 37m</td>
+            </tr>
+            <tr>
+                <td><span class="side-no">NO</span></td>
+                <td title="Will Israel launch a major ground offensive in Lebanon by March 31?">Will Israel launch a major ground offensive in Lebanon by... <span style="background:#7f1d1d;color:#fca5a5;font-size:9px;padding:1px 4px;border-radius:3px;" title="Bought 8x, sold 3x">8x</span></td>
+                <td>0.380</td>
+                <td>0.240</td>
+                <td>$3.22</td>
+                <td style="color:#ef4444">$-1.88</td>
+                <td style="color:#ef4444;font-size:12px;">-36.8%</td>
+                <td style="color:#ef4444;font-size:12px;" title="24h momentum">▼ -37.3%</td>
+                <td style="color:#10b981;font-size:12px;text-align:center;" title="Position age">7m</td>
             </tr>
             <tr style="border-top:2px solid #475569;font-weight:700;">
                 <td colspan="4" style="text-align:right;color:#94a3b8;">TOTAL</td>
-                <td>$169.81<div style="font-size:10px;color:#64748b;font-weight:400;">cost $172.83</div></td>
-                <td style="color:#ef4444">$-3.05</td>
-                <td style="color:#ef4444;font-size:12px;">-1.8%</td>
+                <td>$173.10<div style="font-size:10px;color:#64748b;font-weight:400;">cost $177.93</div></td>
+                <td style="color:#ef4444">$-4.86</td>
+                <td style="color:#ef4444;font-size:12px;">-2.7%</td>
                 <td></td>
                 <td></td>
             </tr></tbody>
@@ -1688,12 +1700,22 @@
             <label>To:</label>
             <input type="date" id="date-to" onchange="filterTransactions()">
             <button class="btn btn-secondary btn-sm" onclick="clearDateFilter()">Clear</button>
-            <span class="txn-count" id="txn-count">783 transaction(s)</span>
+            <span class="txn-count" id="txn-count">784 transaction(s)</span>
         </div>
         <div style="max-height:400px;overflow-y:auto;">
         <table>
             <thead><tr><th>Time</th><th>Action</th><th>Side</th><th>Market</th><th>Price</th><th>Size</th><th>P&amp;L</th><th>Reason</th></tr></thead>
             <tbody id="txn-body">
+            <tr class="txn-row" data-date="2026-03-16">
+                <td>03/16 03:45 PM</td>
+                <td><span style="color:#ef4444;font-weight:700;font-size:11px;">AUTO_RECONCILE_ADD</span></td>
+                <td><span class="side-no">NO</span></td>
+                <td title="Will Israel launch a major ground offensive in Lebanon by March 31?">Will Israel launch a major ground offensiv...</td>
+                <td>$0.000</td>
+                <td>$5.10</td>
+                <td></td>
+                <td title="Position found on-chain but missing from bot_state" style="color:#64748b;font-size:12px;">Position found on-chain but missing f...</td>
+            </tr>
             <tr class="txn-row" data-date="2026-03-16">
                 <td>03/16 03:38 PM</td>
                 <td><span style="color:#ef4444;font-weight:700;font-size:11px;">PHANTOM_REMOVED</span></td>
