@@ -70,7 +70,7 @@
     <h1><span style="color:#818cf8;font-size:26px;letter-spacing:0.02em;">PolyChirp</span><sup style="font-size:10px;color:#94a3b8;vertical-align:super;">TM</sup></h1>
     <div class="header-right">
         <a href="/analytics" style="color:#60a5fa;text-decoration:none;font-size:13px;padding:6px 14px;border:1px solid #334155;border-radius:6px;margin-right:8px;">Analytics</a>
-        <span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#10b981;margin-right:4px;"></span><span class="last-run">Last run: 0s ago (10:22 AM CDT, 03/30/2026)</span>
+        <span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#10b981;margin-right:4px;"></span><span class="last-run">Last run: 0s ago (10:31 AM CDT, 03/30/2026)</span>
         <button class="btn btn-secondary" onclick="refreshPage()">Refresh</button>
     </div>
 </div>
@@ -130,13 +130,13 @@
     <div class="stats-grid">
         <div class="stat-card">
             <div class="stat-label">Portfolio Value</div>
-            <div class="stat-value">$107.28</div>
-            <div class="stat-sub" style="color:#10b981">+$10.75 (+11.1%) from $96.53</div>
+            <div class="stat-value">$111.78</div>
+            <div class="stat-sub" style="color:#10b981">+$15.25 (+15.8%) from $96.53</div>
         </div>
         <div class="stat-card">
             <div class="stat-label">Win / Loss (Open)</div>
-            <div class="stat-value"><span style="color:#10b981">1W</span> <span style="color:#64748b">/</span> <span style="color:#ef4444">2L</span></div>
-            <div class="stat-sub"><span style="color:#10b981">+$0.00</span> / <span style="color:#ef4444">$-0.60</span> | <span style="color:#f59e0b">1 trailing</span></div>
+            <div class="stat-value"><span style="color:#10b981">2W</span> <span style="color:#64748b">/</span> <span style="color:#ef4444">2L</span></div>
+            <div class="stat-sub"><span style="color:#10b981">+$0.30</span> / <span style="color:#ef4444">$-0.60</span> | <span style="color:#f59e0b">2 trailing</span></div>
         </div>
         <div class="stat-card">
             <div class="stat-label">Realized P&amp;L</div>
@@ -145,8 +145,8 @@
         </div>
         <div class="stat-card">
             <div class="stat-label">Open Positions P&amp;L</div>
-            <div class="stat-value" style="color:#ef4444">$-0.60</div>
-            <div class="stat-sub">-5.4% on $11.18 deployed</div>
+            <div class="stat-value" style="color:#ef4444">$-0.30</div>
+            <div class="stat-sub">-2.0% on $15.38 deployed</div>
         </div>
         <div class="stat-card">
             <div class="stat-label">Cash Available (On-Chain)</div>
@@ -155,14 +155,14 @@
         </div>
         <div class="stat-card">
             <div class="stat-label">Exposure</div>
-            <div class="stat-value">$11.18</div>
-            <div class="exposure-bar"><div class="exposure-fill" style="width:14%;background:#10b981"></div></div>
-            <div class="stat-sub">11.6% of bankroll (max 85%)</div>
+            <div class="stat-value">$15.38</div>
+            <div class="exposure-bar"><div class="exposure-fill" style="width:20%;background:#10b981"></div></div>
+            <div class="stat-sub">15.9% of bankroll (max 85%)</div>
         </div>
         <div class="stat-card">
             <div class="stat-label">Portfolio Momentum</div>
-            <div class="stat-value" style="color:#ef4444">-6.6%</div>
-            <div class="stat-sub">Breadth: <span style="color:#ef4444">0%</span> of positions trending up</div>
+            <div class="stat-value" style="color:#ef4444">-2.8%</div>
+            <div class="stat-sub">Breadth: <span style="color:#ef4444">25%</span> of positions trending up</div>
         </div>
     </div>
 
@@ -170,24 +170,24 @@
     <div class="stat-card" style="margin-bottom:16px;border:1px solid #334155;">
         <div class="stat-label" style="font-size:13px;margin-bottom:6px;">Accounting Proof</div>
         <table style="width:100%;font-size:13px;color:#e2e8f0;border-collapse:collapse;">
-            <tr><td style="padding:2px 0;">Cost Basis (open positions)</td><td style="text-align:right;">$11.18</td></tr>
+            <tr><td style="padding:2px 0;">Cost Basis (open positions)</td><td style="text-align:right;">$15.38</td></tr>
             <tr><td style="padding:2px 0;">Cash Available</td><td style="text-align:right;">$96.53</td></tr>
             <tr><td style="padding:2px 0;color:#10b981">Minus Realized P&amp;L (+$0.00)</td><td style="text-align:right;color:#10b981">-$0.00</td></tr>
             <tr style="border-top:1px solid #475569;font-weight:700;">
                 <td style="padding:4px 0;">Computed Starting Balance</td>
-                <td style="text-align:right;color:#ef4444">$107.71</td>
+                <td style="text-align:right;color:#ef4444">$111.91</td>
             </tr>
             <tr><td style="padding:2px 0;color:#94a3b8;">Actual Starting Balance</td><td style="text-align:right;color:#94a3b8;">$96.53</td></tr>
             <tr style="border-top:1px solid #334155;">
                 <td style="padding:4px 0;font-weight:700;">Discrepancy</td>
-                <td style="text-align:right;font-weight:700;color:#ef4444">$+11.18</td>
+                <td style="text-align:right;font-weight:700;color:#ef4444">$+15.38</td>
             </tr>
         </table>
     </div>
 
     <!-- Positions -->
     <div class="section">
-        <div class="section-header"><h2>Open Positions (3)</h2></div>
+        <div class="section-header"><h2>Open Positions (4)</h2></div>
         <table id="positions-table">
             <thead><tr>
                 <th class="sortable" data-col="0" data-type="text">Side <span class="sort-arrow"></span></th>
@@ -203,6 +203,18 @@
             </tr></thead>
             <tbody id="positions-body">
             <tr>
+                <td><span class="side-yes">YES</span></td>
+                <td title="Will Paloma Valencia win the 2026 Colombian presidential election?">Will Paloma Valencia win the 2026 Colombian presidential ...</td>
+                <td>0.396</td>
+                <td>0.424</td>
+                <td>$4.49</td>
+                <td style="color:#10b981">+$0.30</td>
+                <td style="color:#10b981;font-size:12px;">+7.1% <span style="background:#f59e0b;color:#000;font-size:10px;padding:1px 5px;border-radius:3px;font-weight:700;" title="Trailing TP active — will exit when momentum retreats">TRAIL</span></td>
+                <td style="color:#10b981;font-size:12px;" title="24h momentum">▲ +7.6%</td>
+                <td style="color:#10b981;font-size:12px;text-align:center;" title="Position age" data-sort-val="61">1m</td>
+                <td style="color:#6b7280;font-size:12px;text-align:center;" title="Time to resolution" data-sort-val="0"></td>
+            </tr>
+            <tr>
                 <td><span class="side-no">NO</span></td>
                 <td title="Will Kylian Mbappe be the 2025/2026 top UCL goal scorer?">Will Kylian Mbappe be the 2025/2026 top UCL goal scorer?</td>
                 <td>0.280</td>
@@ -210,8 +222,8 @@
                 <td>$0.35</td>
                 <td style="color:#10b981">+$0.00</td>
                 <td style="color:#10b981;font-size:12px;">+0.0% <span style="background:#f59e0b;color:#000;font-size:10px;padding:1px 5px;border-radius:3px;font-weight:700;" title="Trailing TP active — will exit when momentum retreats">TRAIL</span></td>
-                <td style="color:#ef4444;font-size:12px;" title="24h momentum">▼ -3.3%</td>
-                <td style="color:#f59e0b;font-size:12px;text-align:center;" title="Position age" data-sort-val="891022">10d 7h</td>
+                <td style="color:#ef4444;font-size:12px;" title="24h momentum">▼ -4.9%</td>
+                <td style="color:#f59e0b;font-size:12px;text-align:center;" title="Position age" data-sort-val="891557">10d 7h</td>
                 <td style="color:#6b7280;font-size:12px;text-align:center;" title="Time to resolution" data-sort-val="0"></td>
             </tr>
             <tr>
@@ -223,7 +235,7 @@
                 <td style="color:#ef4444">$-0.17</td>
                 <td style="color:#ef4444;font-size:12px;">-1.7%</td>
                 <td style="color:#ef4444;font-size:12px;" title="24h momentum">▼ -5.5%</td>
-                <td style="color:#10b981;font-size:12px;text-align:center;" title="Position age" data-sort-val="2614">43m</td>
+                <td style="color:#10b981;font-size:12px;text-align:center;" title="Position age" data-sort-val="3148">52m</td>
                 <td style="color:#6b7280;font-size:12px;text-align:center;" title="Time to resolution" data-sort-val="0"></td>
             </tr>
             <tr>
@@ -234,15 +246,15 @@
                 <td>$0.64</td>
                 <td style="color:#ef4444">$-0.43</td>
                 <td style="color:#ef4444;font-size:12px;">-29.7%</td>
-                <td style="color:#ef4444;font-size:12px;" title="24h momentum">▼ -19.5%</td>
-                <td style="color:#6b7280;font-size:12px;text-align:center;" title="Position age" data-sort-val="129133">1d 11h</td>
+                <td style="color:#ef4444;font-size:12px;" title="24h momentum">▼ -20.0%</td>
+                <td style="color:#6b7280;font-size:12px;text-align:center;" title="Position age" data-sort-val="129667">1d 12h</td>
                 <td style="color:#6b7280;font-size:12px;text-align:center;" title="Time to resolution" data-sort-val="0"></td>
             </tr>
             <tr style="border-top:2px solid #475569;font-weight:700;">
                 <td colspan="4" style="text-align:right;color:#94a3b8;">TOTAL</td>
-                <td>$10.76<div style="font-size:10px;color:#64748b;font-weight:400;">cost $11.18</div></td>
-                <td style="color:#ef4444">$-0.60</td>
-                <td style="color:#ef4444;font-size:12px;">-5.4%</td>
+                <td>$15.25<div style="font-size:10px;color:#64748b;font-weight:400;">cost $15.38</div></td>
+                <td style="color:#ef4444">$-0.30</td>
+                <td style="color:#ef4444;font-size:12px;">-2.0%</td>
                 <td></td>
                 <td></td>
             </tr></tbody>
@@ -294,6 +306,16 @@
         <table>
             <thead><tr><th>Time</th><th>Action</th><th>Side</th><th>Market</th><th>Price</th><th>Size</th><th>P&amp;L</th><th>Reason</th></tr></thead>
             <tbody id="txn-body">
+            <tr class="txn-row" data-date="2026-03-30" data-action="auto_reconcile_add">
+                <td>03/30 10:30 AM</td>
+                <td><span style="color:#ef4444;font-weight:700;font-size:11px;">AUTO_RECONCILE_ADD</span></td>
+                <td><span class="side-yes">YES</span></td>
+                <td title="Will Paloma Valencia win the 2026 Colombian presidential election?">Will Paloma Valencia win the 2026 Colombia...</td>
+                <td>$0.000</td>
+                <td>$4.20</td>
+                <td></td>
+                <td title="Position found on-chain but missing from bot_state" style="color:#64748b;font-size:12px;">Position found on-chain but missing f...</td>
+            </tr>
             <tr class="txn-row" data-date="2026-03-30" data-action="sell_failed">
                 <td>03/30 09:39 AM</td>
                 <td><span style="color:#ef4444;font-weight:700;font-size:11px;">SELL_FAILED</span></td>
@@ -371,7 +393,7 @@
     <!-- Run History -->
     <div class="section">
         <div class="section-header">
-            <h2>Run History <span id="run-count" style="font-weight:400;font-size:13px;color:#94a3b8;">(4 runs)</span></h2>
+            <h2>Run History <span id="run-count" style="font-weight:400;font-size:13px;color:#94a3b8;">(5 runs)</span></h2>
             <select id="run-filter" onchange="filterRuns()" style="background:#334155;color:#e2e8f0;border:1px solid #475569;border-radius:6px;padding:4px 10px;font-size:12px;cursor:pointer;">
                 <option value="all">All Runs</option>
                 <option value="trades">Runs with Trades</option>
@@ -384,6 +406,17 @@
         <table>
             <thead><tr><th>Time</th><th>Status</th><th style="text-align:center;">Trades</th><th style="text-align:center;">Positions</th><th style="text-align:right;">Cash</th><th style="text-align:right;">Deployed</th><th style="text-align:right;">Run P&amp;L</th><th style="text-align:right;">Cumulative P&amp;L</th><th style="text-align:right;">Duration</th></tr></thead>
             <tbody id="run-body">
+            <tr data-trades="0" data-pnl="0" data-settings="0">
+                <td>03/30 10:30 AM</td>
+                <td><span style="color:#10b981;font-weight:600;font-size:12px;">ok</span></td>
+                <td style="text-align:center;">0</td>
+                <td style="text-align:center;">4</td>
+                <td style="text-align:right;">$96.53</td>
+                <td style="text-align:right;">$15.38</td>
+                <td style="text-align:right;color:#475569;font-weight:600;">+$0.00</td>
+                <td style="text-align:right;color:#10b981">+$0.00</td>
+                <td style="text-align:right;color:#64748b;">70.5s</td>
+            </tr>
             <tr data-trades="0" data-pnl="0" data-settings="0">
                 <td>03/30 10:15 AM</td>
                 <td><span style="color:#10b981;font-weight:600;font-size:12px;">ok</span></td>
